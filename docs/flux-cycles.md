@@ -1,129 +1,210 @@
 # Flux Cycles
 
-Flux loops are organized by data type. Under each data type, there may
-be sub-categories, and each action is listed with the sequence of events
-that result from its invocation, ending with the API or store. Finally,
-store listeners are listed at the end.
 
-You should be able to use this document trace an **action** starting
-with where it was invoked, through the **API**/**store** involved, and
-finally to the **components** that update as a result. This is important
-because once you start implementing your flux loops, that's precisely
-what you'll need to do.
+## Room Cycles
 
+### Rooms API Request Actions
 
-## Note Cycles
+* `fetchAllRooms`
+  0. invoked from `RoomsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/rooms` is called.
+  0. `receiveAllRooms` is set as the callback.
 
-### Notes API Request Actions
+* `createRoom`
+  0. invoked from new room button `onClick`
+  0. `POST /api/Rooms` is called.
+  0. `receiveSingleRoom` is set as the callback.
 
-* `fetchAllNotes`
-  0. invoked from `NotesIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notes` is called.
-  0. `receiveAllNotes` is set as the callback.
+* `fetchSingleRoom`
+  0. invoked from `RoomDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/Rooms/:id` is called.
+  0. `receiveSingleRoom` is set as the callback.
 
-* `createNote`
-  0. invoked from new note button `onClick`
-  0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the callback.
+* `updateRoom`
+  0. invoked from `RoomForm` `onSubmit`
+  0. `POST /api/Rooms` is called.
+  0. `receiveSingleRoom` is set as the callback.
 
-* `fetchSingleNote`
-  0. invoked from `NoteDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notes/:id` is called.
-  0. `receiveSingleNote` is set as the callback.
+* `destroyRoom`
+  0. invoked from delete room button `onClick`
+  0. `DELETE /api/Rooms/:id` is called.
+  0. `removeRoom` is set as the callback.
 
-* `updateNote`
-  0. invoked from `NoteForm` `onSubmit`
-  0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the callback.
+### Rooms API Response Actions
 
-* `destroyNote`
-  0. invoked from delete note button `onClick`
-  0. `DELETE /api/notes/:id` is called.
-  0. `removeNote` is set as the callback.
-
-### Notes API Response Actions
-
-* `receiveAllNotes`
+* `receiveAllRooms`
   0. invoked from an API callback.
-  0. `Note` store updates `_notes` and emits change.
+  0. `Room` store updates `_Rooms` and emits change.
 
-* `receiveSingleNote`
+* `receiveSingleRoom`
   0. invoked from an API callback.
-  0. `Note` store updates `_notes[id]` and emits change.
+  0. `Room` store updates `_Rooms[id]` and emits change.
 
-* `removeNote`
+* `removeRoom`
   0. invoked from an API callback.
-  0. `Note` store removes `_notes[id]` and emits change.
+  0. `Room` store removes `_Rooms[id]` and emits change.
 
 ### Store Listeners
 
-* `NotesIndex` component listens to `Note` store.
-* `NoteDetail` component listens to `Note` store.
+* `RoomsIndex` component listens to `Room` store.
 
 
-## Notebook Cycles
+## Bunny Cycles
 
-### Notebooks API Request Actions
+### Bunnies API Request Actions
 
-* `fetchAllNotebooks`
-  0. invoked from `NotebooksIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks` is called.
-  0. `receiveAllNotebooks` is set as the callback.
+* `fetchSuitableBunnies`
+  0. invoked from `BunnyList` `didMount`/`willReceiveProps`
+  0. `GET chores/:id/bunnies` is called.
+  0. `receiveSuitableBunnies` is set as the callback.
 
-* `createNotebook`
-  0. invoked from new notebook button `onClick`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `fetchSingleBunny`
+  0. invoked from `BunnyOverview` `didMount`/`willReceiveProps`
+  0. `GET bunnies/:id` is called.
+  0. `receiveSingleBunny` is set as the callback.
 
-* `fetchSingleNotebook`
-  0. invoked from `NotebookDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks/:id` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+### Bunnies API Response Actions
 
-* `updateNotebook`
-  0. invoked from `NotebookForm` `onSubmit`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the callback.
-
-* `destroyNotebook`
-  0. invoked from delete notebook button `onClick`
-  0. `DELETE /api/notebooks/:id` is called.
-  0. `removeNotebook` is set as the callback.
-
-### Notebooks API Response Actions
-
-* `receiveAllNotebooks`
+* `receiveSuitableBunnies`
   0. invoked from an API callback.
-  0. `Notebook` store updates `_notebooks` and emits change.
+  0. `Bunny` store updates `_Bunnies` and emits change.
 
-* `receiveSingleNotebook`
+* `receiveSingleBunny`
   0. invoked from an API callback.
-  0. `Notebook` store updates `_notebooks[id]` and emits change.
-
-* `removeNotebook`
-  0. invoked from an API callback.
-  0. `Notebook` store removes `_notebooks[id]` and emits change.
+  0. `Bunny` store updates `_Bunnies[id]` and emits change.
 
 ### Store Listeners
 
-* `NotebooksIndex` component listens to `Notebook` store.
+* `BunnyList` component listens to `Bunny` store.
 
 
-## SearchSuggestion Cycles
+## Chore Cycles
 
-* `fetchSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when there is text
-  0. `GET /api/notes` is called with `text` param.
-  0. `receiveSearchSuggestions` is set as the callback.
+### Chores API Request Actions
 
-* `receiveSearchSuggestions`
+* `fetchAllChores`
+  0. invoked from `ChoresIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/chores` is called.
+  0. `receiveAllChores` is set as the callback.
+
+* `createChore`
+  0. invoked from new chore button `onClick`
+  0. `POST /api/chores` is called.
+  0. `receiveSingleChore` is set as the callback.
+
+* `fetchSingleChore`
+  0. invoked from `ChoreDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/chores/:id` is called.
+  0. `receiveSingleChore` is set as the callback.
+
+* `updateChore`
+  0. invoked from `ChoreForm` `onSubmit`
+  0. `POST /api/chores` is called.
+  0. `receiveSingleChore` is set as the callback.
+
+* `destroyChore`
+  0. invoked from delete chore button `onClick`
+  0. `DELETE /api/chores/:id` is called.
+  0. `removeChore` is set as the callback.
+
+### Chores API Response Actions
+
+* `receiveAllChores`
   0. invoked from an API callback.
-  0. `SearchSuggestion` store updates `_suggestions` and emits change.
+  0. `Chore` store updates `_chores` and emits change.
 
-* `removeSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when empty
-  0. `SearchSuggestion` store resets `_suggestions` and emits change.
+* `receiveSingleChore`
+  0. invoked from an API callback.
+  0. `Chore` store updates `_chores[id]` and emits change.
+
+* `removeChore`
+  0. invoked from an API callback.
+  0. `Chore` store removes `_chores[id]` and emits change.
 
 ### Store Listeners
 
-* `SearchBarSuggestions` component listens to `SearchSuggestion` store.
+* `ChoresSearch` component listens to `Chore` store.
+* `BunnyChoreIndex` component listens to `Chore` store.
+
+
+## Booking Cycles
+
+### Bookings API Request Actions
+
+* `fetchAllBookings`
+  0. invoked from `ChoreBooking` `didMount`/`willReceiveProps`
+  0. `GET /api/bookings` is called.
+  0. `receiveAllBookings` is set as the callback.
+
+* `createBooking`
+  0. invoked from new booking button `onClick`
+  0. `POST /api/bookings` is called.
+  0. `receiveSingleBooking` is set as the callback.
+
+* `fetchSingleBooking`
+  0. invoked from `Dashboard` `didMount`/`willReceiveProps`
+  0. `GET /api/bookings/:id` is called.
+  0. `receiveSingleBooking` is set as the callback.
+
+* `cancelBooking`
+  0. invoked from cancel chore button `onClick`
+  0. `DELETE /api/bookings/:id` is called.
+  0. `removeBooking` is set as the callback.
+
+### Bookings API Response Actions
+
+* `receiveAllBookings`
+  0. invoked from an API callback.
+  0. `Booking` store updates `_booking` and emits change.
+
+* `receiveSingleBooking`
+  0. invoked from an API callback.
+  0. `Booking` store updates `_booking[id]` and emits change.
+
+* `removeBooking`
+  0. invoked from an API callback.
+  0. `Booking` store removes `_booking[id]` and emits change.
+
+### Store Listeners
+
+* `Dashboard` component listens to `Booking` store.
+* `ChoreBooking` component listens to `Booking` store.
+
+
+## Review Cycles
+
+### Reviews API Request Actions
+
+* `fetchAllReviews`
+  0. invoked from `BunnyProfile` `didMount`/`willReceiveProps`
+  0. `GET /api/bunnies/:id/reviews` is called.
+  0. `receiveAllReviews` is set as the callback.
+
+* `fetchRoomReviews`
+  0. invoked from `RoomIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/rooms/:id/reviews` is called.
+  0. `receiveRoomReviews` is set as the callback.
+
+* `createReview`
+  0. invoked from `BunnyReviewForm` submit review button `onClick`
+  0. `POST /api/reviews` is called.
+  0. `receiveSingleReview` is set as the callback.
+
+### Reviews API Response Actions
+
+* `receiveAllReviews`
+  0. invoked from an API callback.
+  0. `Review` store updates `_reviews` and emits change.
+
+* `receiveRoomReviews`
+  0. invoked from an API callback.
+  0. `Review` store updates `_reviews[id]` and emits change.
+
+* `receiveSingleReview`
+  0. invoked from an API callback.
+  0. `Review` store removes `_reviews[id]` and emits change.
+
+### Store Listeners
+
+* `BunnyProfile` component listens to `Review` store.
+* `RoomIndex` component listens to `Review` store.

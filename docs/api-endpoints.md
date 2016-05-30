@@ -68,5 +68,6 @@
 
 - `GET /reviews/new`
 - `GET /api/bunnies/:id/reviews`
+- `GET /api/rooms/:id/reviews`
 - `POST /api/reviews`
 - `PATCH /api/reviews/:id`

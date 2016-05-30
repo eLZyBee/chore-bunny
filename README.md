@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] **NB:** Link to production site (not yet live!)
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://chorebunny.herokuapp.com
 
 ## Minimum Viable Product
 
@@ -46,40 +46,41 @@ ChoreBunny will allow users to do the following:
 
 ### Phase 1: Backend setup and User Authentication (0.5 days)
 
-**Objective:** Functioning rails project with Authentication
+**Objective:** Functioning rails project with Authentication.
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [ ] create new project.
+- [ ] create `User` model.
+- [ ] authentication.
+- [ ] user signup/signin pages.
+- [ ] blank landing page after signin.
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Rooms/Chores/Bunnies/Bookings Models, API, and basic APIUtil (2 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Rooms/Chores/Bunnies/Bookings can be created, read, edited and destroyed through the API.
 
-- [ ] create `Note` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
+- [ ] create `Room` & `Chore` & `Bunny` & `Booking` models.
+- [ ] seed the database with a small amount of test data.
+- [ ] CRUD API for rooms, chores, bunnies and bookings (`RoomController`, `ChoreController`, `BunnyController`, `BookingController`)
+- [ ] jBuilder views for rooms, chores, bunnies & bookings.
+- [ ] setup Webpack & Flux scaffold.
+- [ ] setup `APIUtil` to interact with the API.
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1.5 days)
+### Phase 3: Flux/React Architecture and Router (1.5 days)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
+**Objective:** Bookings can be created, read, edited and destroyed with the
 user interface.
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
+- implement each Booking component, building out the flux loop as needed.
+  - [ ] `Dashboard`
+  - [ ] `ChoreBookingDetailsForm`
+  - [ ] `BunnySearch`
+    - [ ] `BunnyList`
+  - [ ] `BookingConfirmationForm`
+- [ ] setup cancellation from bookings within `Dashboard`
+- [ ] save Bookings to the DB on confirmation.
 
 ### Phase 4: Start Styling (0.5 days)
 
@@ -89,42 +90,36 @@ user interface.
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 5: Notebooks (1 day)
+### Phase 5: Implement detailed Booking Stages (1 day)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Add `BookingStageHeader`, `BookingDetailsForm`, `BunnySearch`, `Scheduler`, `QuickAssignment` and `BunnyFilter` components to booking process.
 
-- [ ] create `Notebook` model
+- [ ] create `BookingStageHeader`, `BookingDetailsForm` and `BunnySearch` components.
+  - [ ] Apply CSS styling to these.
+- [ ] create `Scheduler`, `QuickAssignment` and `BunnyFilter` components.
+  - [ ] Apply CSS styling to these.
+
+### Phase 6: Implement BunnyProfile and Reviews (1 day)
+
+**Objective:** Add a profile view for Bunnies and create Review model.
+
+- [ ] create `Review` model and table, reviews belong to completed bookings.
+- [ ] create `BunnyProfile` component
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
-- Use CSS to style new views
-
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
-
-### Phase 6: Tags (1.5 days)
-
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
-
-- [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
+  - [ ] creating review of a booking
+  - [ ] viewing reviews in BunnyProfile
 - [ ] Style new elements
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
+### Phase 7: Add UserAccountPage and ChoreSearch on Dashboard (1 day)
 
-**objective:** Enable complex styling of notes.
+**objective:** Add UserAccountPage component.
 
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+- [ ] create `UserAccountPage` and `ChoreSearch` component.
+- build out API, Flux loop and components for:
+  - [ ] searching for common chores
+  - [ ] browsing account information
 
-### Phase 8: Styling Cleanup and Seeding (1 day)
+### Phase 8: Styling Cleanup and Seeding (0.5 day)
 
 **objective:** Make the site feel more cohesive and awesome.
 
@@ -133,14 +128,8 @@ which has its own `Index` view.
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+- [ ] Sign in as Bunny, manage bookings.
+- [ ] Smart component population (popular chores show in Dashboard)
+- [ ] Add booking cancellations.
+- [ ] Allow users to upload profile pictures.
+- [ ] Log in with Google / Facebook.

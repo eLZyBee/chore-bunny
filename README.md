@@ -1,4 +1,6 @@
 # ChoreBunny
+![logo]
+[logo]: ./ChoreBunny-logo.png
 
 [Heroku Link][heroku] **NB:** Link to production site (not yet live!)
 
@@ -133,7 +135,3 @@ user interface.
 - [ ] Add booking cancellations.
 - [ ] Allow users to upload profile pictures.
 - [ ] Log in with Google / Facebook.
-
-![logo]
-
-[logo]: ./ChoreBunny-logo.png

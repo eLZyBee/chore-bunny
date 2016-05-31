@@ -7,6 +7,7 @@ module.exports = {
 
   signup: function(user) {
     UserApiUtil.signup({
+      name: user.name,
       email: user.email,
       password: user.password
     });

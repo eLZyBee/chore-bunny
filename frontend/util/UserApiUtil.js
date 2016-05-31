@@ -8,6 +8,7 @@ module.exports = {
       url: 'api/user',
       data: {user:
         {
+          name: credentials.name,
           email: credentials.email,
           password: credentials.password
         }

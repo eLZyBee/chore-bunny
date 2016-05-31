@@ -25,39 +25,49 @@ var LoginForm = React.createClass({
   updatePassword: function (e) {
     this.setState({password: e.target.value});
   },
-
   signupForm: function () {
-    <form onSubmit={this.handleSignup}>
-      <label>First Name
-        <input type='text' onChange={this.updateFirstName} value={this.state.firstName}/>
-      </label>
-      <label>Last Name
-        <input type='text' onChange={this.updateLastName} value={this.state.lastName}/>
-      </label>
-      <label>Email Address
-        <input type='text' onChange={this.updateEmail} value={this.state.email}/>
-      </label>
-      <label>Password
-        <input type='password'onChange={this.updatePassword} value={this.state.password}/>
-      </label>
-        <input type='submit' value='Sign up'/>
-    </form>
-  },
-
-  loginForm: function () {
     return (
-      <form onSubmit={this.handleLogin}>
-        <label>Email Address
+      <form onSubmit={this.handleSignup}>
+        <label>First Name<br/>
+          <input type='text' onChange={this.updateFirstName} value={this.state.firstName}/>
+        </label><br/>
+        <label>Last Name<br/>
+          <input type='text' onChange={this.updateLastName} value={this.state.lastName}/>
+        </label><br/>
+        <label>Email Address<br/>
           <input type='text' onChange={this.updateEmail} value={this.state.email}/>
-        </label>
-        <label>Password
+        </label><br/>
+        <label>Password<br/>
           <input type='password'onChange={this.updatePassword} value={this.state.password}/>
-        </label>
-          <input type='submit' value='Log in'/>
+        </label><br/>
+        <input type='submit' value='Sign up'/>
+        <button onClick={this.goBack}>Back</button>
       </form>
     )
   },
-
+  loginForm: function () {
+    return (
+      <form onSubmit={this.handleLogin}>
+        <label>Email Address<br/>
+          <input type='text' onChange={this.updateEmail} value={this.state.email}/>
+        </label><br/>
+        <label>Password<br/>
+          <input type='password'onChange={this.updatePassword} value={this.state.password}/>
+        </label><br/>
+          <input type='submit' value='Log in'/>
+          <button onClick={this.goBack}>Back</button>
+      </form>
+    )
+  },
+  chooseLogin: function () {
+    this.setState({form: 'login'});
+  },
+  chooseSignup: function () {
+    this.setState({form: 'signup'});
+  },
+  goBack: function () {
+    this.setState({form: 'choose'});
+  },
   chooseForm: function () {
     return (
       <div>
@@ -66,11 +76,29 @@ var LoginForm = React.createClass({
       </div>
     )
   },
-
-
+  handleSignup: function (e) {
+    e.preventDefault();
+    var name = this.state.firstName + ' ' + this.state.lastName;
+    UserActions.signup({
+      name: name,
+      email: this.state.email,
+      password: this.state.password
+    });
+  },
+  handleLogin: function (e) {
+    e.preventDefault();
+    UserActions.login({
+      email: this.state.email,
+      password: this.state.password
+    });
+  },
+  guestLogin: function (e) {
+    e.preventDefault();
+    UserActions.guestLogin();
+  },
   render: function () {
     var form = this.state.form;
-  
+
     if (form === 'choose') {
       form = this.chooseForm();
     } else if (form === 'login') {
@@ -82,10 +110,13 @@ var LoginForm = React.createClass({
     return (
       <div className='background'>
         <div className='auth-form'>
+          <img src={logoUrl}/>
           {form}
+          <p>Don't have or want an account? Log in as <h4 onClick={this.guestLogin}>guest</h4></p>
         </div>
       </div>
     );
+  
   }
 
 });

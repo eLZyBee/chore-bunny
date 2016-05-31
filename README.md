@@ -1,6 +1,6 @@
 # ChoreBunny
 ![logo]
-[logo]: ./ChoreBunny-logo.png
+[logo]: .app/assets/images/chore_bunny_logo.png
 
 [Heroku Link][heroku] **NB:** Link to production site (not yet live!)
 

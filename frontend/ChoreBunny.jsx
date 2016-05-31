@@ -9,12 +9,10 @@ var Router = require('react-router').Router,
 var LoginForm = require('./components/LoginForm'),
   Dashboard = require('./components/Dashboard');
 
-var CurrentUserState = require('./mixins/CurrentUserState'),
-  SessionStore = require('./stores/SessionStore'),
+var SessionStore = require('./stores/SessionStore'),
   SessionApiUtil = require('./util/SessionApiUtil');
 
 var App = React.createClass({
-  mixins: [CurrentUserState],
   render: function() {
     return (
       <div>

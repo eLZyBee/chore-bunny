@@ -1,9 +1,8 @@
 var React = require('react'),
   UserActions = require('../actions/UserActions'),
-  CurrentUserState = require('../mixins/CurrentUserState');
+  SessionStore = require('../stores/SessionStore');
 
 var LoginForm = React.createClass({
-  mixins: [CurrentUserState],
   getInitialState: function() {
     return({
       form: 'choose',
@@ -12,6 +11,12 @@ var LoginForm = React.createClass({
       lastName: '',
       password: ''
     });
+  },
+  _loginChange: function () {
+    console.log(SessionStore.currentUser());
+  },
+  componentDidMount: function () {
+    SessionStore.addListener(this._loginChange);
   },
   updateFirstName: function (e) {
     this.setState({firstName: e.target.value});

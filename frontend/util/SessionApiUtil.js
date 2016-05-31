@@ -22,7 +22,7 @@ var SessionApiUtil = {
 	logout: function () {
 		$.ajax({
 			url: '/api/session',
-			method: 'delete',
+			type: 'DELETE',
 			success: function () {
         console.log("Logout success (SessionApiUtil#logout)");
         SessionActions.removeCurrentUser();
@@ -36,7 +36,7 @@ var SessionApiUtil = {
 	fetchCurrentUser: function (success) {
 		$.ajax({
 			url: '/api/session',
-			method: 'GET',
+			type: 'GET',
 			success: function (currentUser) {
 			  SessionActions.receiveCurrentUser(currentUser);
         success && success();

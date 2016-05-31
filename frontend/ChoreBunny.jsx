@@ -6,6 +6,8 @@ var Router = require('react-router').Router,
   IndexRoute = require('react-router').IndexRoute,
   hashHistory = require('react-router').hashHistory;
 
+var LoginForm = require('./components/LoginForm');
+
 var CurrentUserState = require('./mixins/CurrentUserState');
 
 var App = React.createClass({
@@ -13,6 +15,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
+        <h1>ChoreBunny</h1>
         <LoginForm/>
         {this.props.children}
       </div>

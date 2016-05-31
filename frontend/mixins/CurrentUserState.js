@@ -16,7 +16,7 @@ module.exports = {
     }
   },
 
-  updateUser: function () {
+  amendUser: function () {
     this.setState({
       currentUser: UserStore.currentUser(),
       userErrors: UserStore.errors()

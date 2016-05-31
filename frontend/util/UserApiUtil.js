@@ -1,5 +1,5 @@
 var AppDispatcher = require('../dispatcher/Dispatcher'),
-  UserConstants = require('../actions/UserConstants');
+  UserConstants = require('../constants/UserConstants');
 
 module.exports = {
   signup: function(credentials) {

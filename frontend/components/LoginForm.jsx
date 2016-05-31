@@ -112,11 +112,11 @@ var LoginForm = React.createClass({
         <div className='auth-form'>
           <img src={logoUrl}/>
           {form}
-          <p>Don't have or want an account? Log in as <h4 onClick={this.guestLogin}>guest</h4></p>
+          <p>Don't have or want an account? Log in as <strong onClick={this.guestLogin}>guest</strong></p>
         </div>
       </div>
     );
-  
+
   }
 
 });

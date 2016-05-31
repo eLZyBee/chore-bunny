@@ -21,7 +21,7 @@ module.exports = {
   },
 
   guestLogin: function() {
-    UserActions.login({
+    UserApiUtil.login({
       email: 'guest@test.com',
       password: 'password'
     });

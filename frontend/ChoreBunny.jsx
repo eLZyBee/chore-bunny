@@ -9,7 +9,9 @@ var Router = require('react-router').Router,
 var LoginForm = require('./components/LoginForm'),
   Dashboard = require('./components/Dashboard');
 
-var CurrentUserState = require('./mixins/CurrentUserState');
+var CurrentUserState = require('./mixins/CurrentUserState'),
+  SessionStore = require('./stores/SessionStore'),
+  SessionApiUtil = require('./util/SessionApiUtil');
 
 var App = React.createClass({
   mixins: [CurrentUserState],
@@ -25,11 +27,32 @@ var App = React.createClass({
 
 var router = (
   <Router history={hashHistory}>
-    <Route path='/' component={App}/>
-    <Route path='/home' component={Dashboard} onEnter={ }/>
+    <Route path='/' component={App}>
+      <Route path='/login' component={LoginForm}/>
+      <Route path='home' component={Dashboard} onEnter={ _ensureLoggedIn }/>
+    </Route>
   </Router>
 );
 
 document.addEventListener('DOMContentLoaded', function(){
   ReactDOM.render(router, document.getElementById('root'));
 })
+
+
+function _ensureLoggedIn(nextState, replace, asyncDoneCallback) {
+
+  if (SessionStore.currentUserHasBeenFetched()) {
+    redirectIfNotLoggedIn();
+  } else {
+    SessionApiUtil.fetchCurrentUser(redirectIfNotLoggedIn);
+  }
+
+  function redirectIfNotLoggedIn() {
+    if (!SessionStore.isUserLoggedIn()) {
+
+      replace('/');
+    }
+
+    asyncDoneCallback();
+  }
+}

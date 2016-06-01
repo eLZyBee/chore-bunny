@@ -50,11 +50,11 @@ ChoreBunny will allow users to do the following:
 
 **Objective:** Functioning rails project with Authentication.
 
-- [ ] create new project.
-- [ ] create `User` model.
-- [ ] authentication.
-- [ ] user signup/signin pages.
-- [ ] blank landing page after signin.
+- [x] create new project.
+- [x] create `User` model.
+- [x] authentication.
+- [x] user signup/signin pages.
+- [x] blank landing page after signin.
 
 ### Phase 2: Rooms/Chores/Bunnies/Bookings Models, API, and basic APIUtil (2 days)
 

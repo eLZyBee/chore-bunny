@@ -8,7 +8,6 @@
 
 ### Users
 
-- `GET /users/new`
 - `POST /users`
 - `PATCH /users`
 - `GET /account`
@@ -54,7 +53,6 @@
 
 ### Bookings
 
-  - `GET /bookings/new`
   - `GET /api/bookings/:id`
   - `DELETE /api/bookings/:id`
   - `PATCH /api/bookings/:id`
@@ -66,7 +64,6 @@
 
 ### Reviews
 
-- `GET /reviews/new`
 - `GET /api/bunnies/:id/reviews`
 - `GET /api/rooms/:id/reviews`
 - `POST /api/reviews`

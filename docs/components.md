@@ -1,6 +1,37 @@
 ## Component Hierarchy
 
 * `App`
+	* `Dashboard`
+		* `SignUpForm`
+		* `LogInForm`
+		* `UserAccountPage`
+		* `ChoreSearch`
+			* `ChoreIndex`
+			* `ChoreIndexItem`
+  * `RoomIndex`
+    * `RoomIndexChore`
+	* `ChoreBooking`
+		* `ChoreBookingDetailsForm`
+      * `ChoreDetailsItem`
+		* `BunnySearch`
+			* `QuickAssignment`
+			* `BunnyIndex`
+				* `BunnyIndexItem`
+		* `BookingConfirmationForm`
+		* `BunnyReviewForm`
+	* `BunnyProfile`
+		* `ProfileHeader`
+		* `ProfileTabs`
+		* `BunnyReviewIndex`
+			* `BunnyReviewIndexItem`
+		* `BunnyAbout`
+	* `Footer`
+    * `FooterLinks`
+
+
+# Deprecated
+
+* `App`
 	* `Header/Dashboard`
 		* `SignUpForm`
 		* `InfoPage`

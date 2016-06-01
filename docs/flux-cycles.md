@@ -12,37 +12,37 @@
 
 * `createRoom`
   0. invoked from new room button `onClick`
-  0. `POST /api/Rooms` is called.
+  0. `POST /api/rooms` is called.
   0. `receiveSingleRoom` is set as the callback.
 
 * `fetchSingleRoom`
   0. invoked from `RoomDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/Rooms/:id` is called.
+  0. `GET /api/rooms/:id` is called.
   0. `receiveSingleRoom` is set as the callback.
 
 * `updateRoom`
   0. invoked from `RoomForm` `onSubmit`
-  0. `POST /api/Rooms` is called.
+  0. `PATCH /api/rooms` is called.
   0. `receiveSingleRoom` is set as the callback.
 
 * `destroyRoom`
   0. invoked from delete room button `onClick`
-  0. `DELETE /api/Rooms/:id` is called.
+  0. `DELETE /api/rooms/:id` is called.
   0. `removeRoom` is set as the callback.
 
 ### Rooms API Response Actions
 
 * `receiveAllRooms`
   0. invoked from an API callback.
-  0. `Room` store updates `_Rooms` and emits change.
+  0. `Room` store updates `_rooms` and emits change.
 
 * `receiveSingleRoom`
   0. invoked from an API callback.
-  0. `Room` store updates `_Rooms[id]` and emits change.
+  0. `Room` store updates `_rooms[id]` and emits change.
 
 * `removeRoom`
   0. invoked from an API callback.
-  0. `Room` store removes `_Rooms[id]` and emits change.
+  0. `Room` store removes `_rooms[id]` and emits change.
 
 ### Store Listeners
 
@@ -55,23 +55,23 @@
 
 * `fetchSuitableBunnies`
   0. invoked from `BunnyList` `didMount`/`willReceiveProps`
-  0. `GET chores/:id/bunnies` is called.
+  0. `GET api/chores/:id/bunnies` is called.
   0. `receiveSuitableBunnies` is set as the callback.
 
 * `fetchSingleBunny`
   0. invoked from `BunnyOverview` `didMount`/`willReceiveProps`
-  0. `GET bunnies/:id` is called.
+  0. `GET api/bunnies/:id` is called.
   0. `receiveSingleBunny` is set as the callback.
 
 ### Bunnies API Response Actions
 
 * `receiveSuitableBunnies`
   0. invoked from an API callback.
-  0. `Bunny` store updates `_Bunnies` and emits change.
+  0. `Bunny` store updates `_bunnies` and emits change.
 
 * `receiveSingleBunny`
   0. invoked from an API callback.
-  0. `Bunny` store updates `_Bunnies[id]` and emits change.
+  0. `Bunny` store updates `_bunnies[id]` and emits change.
 
 ### Store Listeners
 
@@ -99,7 +99,7 @@
 
 * `updateChore`
   0. invoked from `ChoreForm` `onSubmit`
-  0. `POST /api/chores` is called.
+  0. `PATCH /api/chores` is called.
   0. `receiveSingleChore` is set as the callback.
 
 * `destroyChore`

@@ -15,8 +15,15 @@ var Dashboard = React.createClass ({
   render: function () {
     return (
       <div className="dashboard">
-        <h1>{'Welcome ' + SessionStore.currentUser().name}</h1>
-        <button onClick={this.signout}>Sign out</button>
+        <div className="header group">
+          <nav>
+            <img src={textUrl}/>
+            <button onClick={this.signout}>Sign out</button>
+          </nav>
+        </div>
+        <div className="main-dash">
+          <h1>{'Welcome to ChoreBunny, ' + SessionStore.currentUser().name + '!'}</h1>
+        </div>
       </div>
     )
   }

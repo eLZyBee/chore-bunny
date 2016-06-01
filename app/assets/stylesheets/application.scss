@@ -20,16 +20,20 @@
 
 
    html, body, section, input, article, h1, h2, p, input, form,
-   button, label, strong {
+   button, label {
      margin: 0;
      border: 0;
      padding: 0;
-     font-family: "Proxima Thin";
-    //  font: inherit;
+     font: inherit;
      text-align: inherit;
      text-decoration: inherit;
      color: inherit;
      background: transparent;
+   }
+
+   h1 {
+     font-size: 36px;
+     font-weight: bold;
    }
 
    .background {
@@ -48,6 +52,9 @@
      text-align: center;
      position: relative;
      padding: 24px 18px;
+     font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+     line-height: 1.4;
+
    }
 
    .auth-form strong {
@@ -57,7 +64,6 @@
    form {
      text-align: left;
      margin: 10px 5px;
-
    }
 
    input {
@@ -70,18 +76,26 @@
       font-size: 1em;
       margin: auto;
       margin: 0px 0px 10px 0px;
+      outline: none;
    }
 
    label {
      text-align: left;
    }
-   button {
+   .auth-form button {
      border-radius: 4px;
      background:white;
      text-align: center;
      padding: 0.5em 1.38em 0.5em;
      font-size: 1.25rem;
      margin: 5px 20px;
+     border: 1px solid #1da3bf;
+     color: #1da3bf;
+   }
+
+   .auth-form button:hover {
+     background-color: #1da3bf;
+     color: white;
    }
 
    form button {
@@ -114,4 +128,42 @@
      left: 0;
      bottom: 0;
      right: 0;
+   }
+
+   /* Landing page stuff */
+
+   body {
+     background: #f5f6f6;
+     font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+   }
+
+   .header {
+     background: white;
+     color: #626a6b;
+     border-bottom: 1px solid #ebecec;
+   }
+
+   nav img {
+     float: left;
+     max-height: 40px;
+     padding: 10px 20px;
+   }
+
+   nav button {
+     float: right;
+     cursor: pointer;
+     padding: 20px;
+
+   }
+
+   .main-dash {
+     padding: 10px 20px;
+     width: 960px;
+     margin: auto;
+   }
+
+   .group:after {
+     content: '';
+     display: block;
+     clear: both;
    }

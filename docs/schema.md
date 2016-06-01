@@ -20,9 +20,23 @@ user_id     | integer   | not null, foreign key (references users), indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-room_id     | integer   | not null, foreign key (references rooms), indexed
 name        | string    | not null
 details     | text/json | not null
+
+## links (join table)
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+chore_id    | integer   | not null, foreign key (references chores), indexed
+room_id     | integer   | not null, foreign key (references rooms), indexed
+
+## rooms
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+name        | string    | not null, indexed, unique
+description | text      | not null
 
 ## households
 column name | data type | details
@@ -41,13 +55,6 @@ room_id     | integer   | not null, foreign key (references rooms), indexed
 details     | text/json | not null
 date        | datetime  | not null
 completed   | boolean   | default false
-
-## rooms
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null, indexed, unique
-description | text      | not null
 
 ## reviews
 column name | data type | details

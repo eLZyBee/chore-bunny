@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Proxima Thin";
+  src: font-url('ProximaNovaAltThin.otf') format("truetype");
+}
+@font-face {
+  font-family: "Proxima Light";
+  src: font-url('ProximaNovaAltLight.otf') format("truetype");
+}
+@font-face {
+  font-family: "Proxima Regular";
+  src: font-url('ProximaNovaAltRegular.otf') format("truetype");
+}
+@font-face {
+  font-family: "Proxima Semibold";
+  src: font-url('ProximaNovaAltSemibold.otf') format("truetype");
+}
+
+
+.background {
+  position: fixed;
+  display: block;
+  background-position: center center;
+  background-image: image-url('background.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

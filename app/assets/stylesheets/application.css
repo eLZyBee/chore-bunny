@@ -13,10 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @font-face {
-   font-family: "Proxima Thin";
-   src: url('/assets/fonts/ProximaNovaAltThin.otf') format("truetype");
- }
+
 
 
    html, body, section, input, article, h1, h2, p, input, form,
@@ -36,10 +33,6 @@
      font-weight: bold;
    }
 
-   .background {
-
-   }
-
    .auth-form {
      border-radius: 4px;
      max-width: 500px;
@@ -52,13 +45,14 @@
      text-align: center;
      position: relative;
      padding: 24px 18px;
-     font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+     font-family: "Proxima Light", Arial, Helvetica, sans-serif;
      line-height: 1.4;
 
    }
 
    .auth-form strong {
      cursor: pointer;
+     font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
    }
 
    form {
@@ -86,10 +80,11 @@
      border-radius: 4px;
      background:white;
      text-align: center;
-     padding: 0.5em 1.38em 0.5em;
+     padding: 0.5em 3em 0.5em;
      font-size: 1.25rem;
      margin: 5px 20px;
      border: 1px solid #1da3bf;
+     font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
      color: #1da3bf;
    }
 
@@ -102,9 +97,6 @@
       margin: 5px 0px;
    }
 
-   .auth-form button {
-
-   }
 
    .submit {
      color: white;
@@ -119,22 +111,13 @@
      background-color: #0d7488;
    }
 
-   .background {
-     position: fixed;
-     display: block;
-     background-position: center;
-     background-image: image-url('background.png');
-     top: 0;
-     left: 0;
-     bottom: 0;
-     right: 0;
-   }
+
 
    /* Landing page stuff */
 
    body {
      background: #f5f6f6;
-     font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+     font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
    }
 
    .header {
@@ -160,6 +143,7 @@
      padding: 10px 20px;
      width: 960px;
      margin: auto;
+     font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
    }
 
    .group:after {

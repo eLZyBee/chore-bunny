@@ -10,7 +10,7 @@ var Dashboard = React.createClass ({
   },
   signout: function () {
     UserActions.logout();
-    this.context.router.push('/');
+    this.context.router.push('/login');
   },
   render: function () {
     return (

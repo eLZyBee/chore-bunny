@@ -49,6 +49,12 @@ module.exports = React.createClass({
       email: this.state.email,
       password: this.state.password
     });
+    this.setState({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: ''
+    });
   },
 
   render: function () {
@@ -66,7 +72,7 @@ module.exports = React.createClass({
         <label>Password<br/>
           <input type='password'onChange={this.updatePassword} value={this.state.password}/>
         </label><br/>
-        <input type='submit' value='Sign up'/>
+        <input className="submit" type='submit' value='Sign up'/>
         <button onClick={this.props.goBack}>Back</button>
       </form>
     )

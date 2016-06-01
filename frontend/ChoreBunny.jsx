@@ -16,7 +16,6 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <LoginForm/>
         {this.props.children}
       </div>
     );
@@ -26,7 +25,8 @@ var App = React.createClass({
 var router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
-      <Route path='/login' component={LoginForm}/>
+      <IndexRoute component={LoginForm}/>
+      <Route path='login' component={LoginForm}/>
       <Route path='home' component={Dashboard} onEnter={ _ensureLoggedIn }/>
     </Route>
   </Router>
@@ -48,7 +48,7 @@ function _ensureLoggedIn(nextState, replace, asyncDoneCallback) {
   function redirectIfNotLoggedIn() {
     if (!SessionStore.isUserLoggedIn()) {
 
-      replace('/');
+      replace('/login');
     }
 
     asyncDoneCallback();

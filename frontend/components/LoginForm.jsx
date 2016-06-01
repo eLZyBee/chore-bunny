@@ -15,7 +15,7 @@ var LoginForm = React.createClass({
     });
   },
   _loginChange: function () {
-    
+
     if (SessionStore.currentUser()){
       this.context.router.push('home')
     }
@@ -42,7 +42,7 @@ var LoginForm = React.createClass({
         <label>Password<br/>
           <input type='password'onChange={this.updatePassword} value={this.state.password}/>
         </label><br/>
-          <input type='submit' value='Log in'/>
+          <input className="submit" type='submit' value='Log in'/>
           <button onClick={this.goBack}>Back</button>
       </form>
     )
@@ -69,6 +69,10 @@ var LoginForm = React.createClass({
     UserActions.login({
       email: this.state.email,
       password: this.state.password
+    });
+    this.setState({
+      email: '',
+      password: ''
     });
   },
   guestLogin: function (e) {

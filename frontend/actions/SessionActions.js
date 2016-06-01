@@ -6,7 +6,7 @@ module.exports = {
   receiveCurrentUser: function (currentUser) {
     AppDispatcher.dispatch({
       actionType: SessionConstants.LOGIN,
-      currentUser: currentUser
+      user: currentUser
     });
   },
 

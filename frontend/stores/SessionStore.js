@@ -25,7 +25,7 @@ function _setErrors(errors) {
 SessionStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case SessionConstants.LOGIN:
-      _login(payload.currentUser);
+      _login(payload.user);
       SessionStore.__emitChange();
       break;
     case SessionConstants.LOGOUT:
@@ -43,7 +43,6 @@ SessionStore.errors = function () {
   return _errors;
 };
 
-
 SessionStore.currentUserHasBeenFetched = function () {
   return _currentUserHasBeenFetched;
 };
@@ -51,5 +50,6 @@ SessionStore.currentUserHasBeenFetched = function () {
 SessionStore.isUserLoggedIn = function () {
   return !!_currentUser.id;
 };
+
 
 module.exports = SessionStore;

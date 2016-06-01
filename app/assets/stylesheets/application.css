@@ -94,6 +94,7 @@
    .auth-form button:hover {
      background-color: #1da3bf;
      color: white;
+     cursor: pointer;
    }
 
    form button {
@@ -112,6 +113,12 @@
 
    .submit:hover {
      background-color: #0d7488;
+     cursor: pointer;
+   }
+
+   .submit:focus {
+     border: 1px solid #1da3bf;
+     height: 45px;
    }
 
 

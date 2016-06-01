@@ -16,6 +16,9 @@ By the end of Week 9, this app will, at a minimum, incorporate the following:
 - [ ] Smooth, bug-free navigation.
 - [ ] Adequate seed data to demonstrate the site's features.
 - [ ] The minimum features necessary for an TaskRabbit style emulation site: chore navigation, worker/bunny navigation and booking, full profile views and review writing/rating.
+  - [ ] Searching for bunnies.
+  - [ ] Making bookings for chores.
+  - [ ] Reviewing bunnies.
 - [ ] Hosting on Heroku.
 - [ ] CSS styling that matches the essence of TaskRabbit styling.
 - [ ] A production README, replacing this README.
@@ -26,8 +29,10 @@ ChoreBunny will allow users to do the following:
 
 - [ ] Create an account (MVP)
 - [ ] Log in / Log out, as parent including as a Guest parent (MVP)
-- [ ] Create, read, edit, and delete reviews of workers/bunnies (MVP)
 - [ ] Search for workers/bunnies (MVP)
+- [ ] Making bookings for chores with individual bunnies (MVP)
+- [ ] Create and read reviews of workers/bunnies (MVP)
+- [ ] Edit and delete reviews of workers/bunnies (not MVP)
 - [ ] Filter bunnies for chores by their ratings (expected feature, not MVP)
 - [ ] Log in / Log out, as bunny including as a Guest bunny (desirable feature, but not MVP)
 

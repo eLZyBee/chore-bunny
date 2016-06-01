@@ -23,7 +23,7 @@ id          | integer   | not null, primary key
 name        | string    | not null
 details     | text/json | not null
 
-## links (join table)
+## linkings (join table)
 
 column name | data type | details
 ------------|-----------|-----------------------

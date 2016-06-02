@@ -67,8 +67,8 @@ ChoreBunny will allow users to do the following:
 
 - [x] create `Room` & `Chore` & `Bunny` & `Booking` models.
 - [x] seed the database with a small amount of test data.
-- [ ] CRUD API for rooms, chores, bunnies and bookings (`RoomController`, `ChoreController`, `BunnyController`, `BookingController`)
-- [ ] jBuilder views for rooms, chores, bunnies & bookings.
+- [x] CRUD API for rooms, chores, bunnies and bookings (`RoomController`, `ChoreController`, `BunnyController`, `BookingController`)
+- [x] jBuilder views for rooms, chores, bunnies & bookings.
 - [ ] setup Webpack & Flux scaffold.
 - [ ] setup `APIUtil` to interact with the API.
 - [ ] test out API interaction in the console.

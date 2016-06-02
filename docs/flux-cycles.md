@@ -53,7 +53,17 @@
 
 ### Bunnies API Request Actions
 
-* `fetchSuitableBunnies`
+* `fetchAllBunnies`
+0. invoked from `BunnyIndex` `didMount`/`willReceiveProps`
+0. `GET api/bunnies` is called.
+0. `receiveAllBunnies` is set as the callback.
+
+* `fetchSingleBunny`
+0. invoked from `BunnyIndexItem` `didMount`/`willReceiveProps`
+0. `GET api/bunnies/:id` is called.
+0. `receiveSingleBunny` is set as the callback.
+
+* *`fetchSuitableBunnies`
   0. invoked from `BunnyList` `didMount`/`willReceiveProps`
   0. `GET api/chores/:id/bunnies` is called.
   0. `receiveSuitableBunnies` is set as the callback.
@@ -61,7 +71,7 @@
 * `fetchSingleBunny`
   0. invoked from `BunnyOverview` `didMount`/`willReceiveProps`
   0. `GET api/bunnies/:id` is called.
-  0. `receiveSingleBunny` is set as the callback.
+  0. `receiveSingleBunny` is set as the callback.*
 
 ### Bunnies API Response Actions
 
@@ -75,7 +85,7 @@
 
 ### Store Listeners
 
-* `BunnyList` component listens to `Bunny` store.
+* `BunnyIndex` component listens to `Bunny` store.
 
 
 ## Chore Cycles

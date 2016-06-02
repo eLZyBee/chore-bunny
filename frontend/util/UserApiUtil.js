@@ -51,7 +51,7 @@ module.exports = {
     });
   },
 
-  // Utilites for the above
+  // Callback Utils for above
   receiveCurrentUser: function(user) {
     AppDispatcher.dispatch({
       actionType: UserConstants.LOGIN,

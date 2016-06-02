@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Seed Guest account
-User.create(name: 'guest', email: 'guest@test.com', password: 'password')
+User.create(name: 'Guesty McGuestface', email: 'guest@test.com', password: 'password')
 
 # Seed users that will be bunnies and seed them as bunnies too
 bunnies = %w{Elki Avie Sam Jack Ben Christopher Jenny Mark Lyn Nate}

@@ -15,16 +15,6 @@ module.exports = React.createClass({
     });
   },
 
-  _loginChange: function () {
-    if (SessionStore.currentUser()){
-      this.context.router.push('home')
-    }
-  },
-
-  componentDidMount: function () {
-    SessionStore.addListener(this._loginChange);
-  },
-
   updateFirstName: function (e) {
     this.setState({firstName: e.target.value});
   },
@@ -49,12 +39,12 @@ module.exports = React.createClass({
       email: this.state.email,
       password: this.state.password
     });
-    this.setState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: ''
-    });
+    // this.setState({
+    //   firstName: '',
+    //   lastName: '',
+    //   email: '',
+    //   password: ''
+    // });
   },
 
   render: function () {

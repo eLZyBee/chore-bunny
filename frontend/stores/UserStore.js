@@ -28,7 +28,7 @@ UserStore.setErrors = function (errors) {
 
 UserStore.errors = function () {
   if (_errors) {
-    return _errors;
+    return [].slice.call(_errors);
   }
 };
 

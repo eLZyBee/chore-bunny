@@ -1,5 +1,5 @@
 var React = require('react'),
-  UserActions = require('../actions/UserActions'),
+  ClientActions = require('../actions/ClientActions'),
   SessionStore = require('../stores/SessionStore');
 
 var Dashboard = React.createClass ({
@@ -9,7 +9,7 @@ var Dashboard = React.createClass ({
   componentDidMount: function () {
   },
   signout: function () {
-    UserActions.logout();
+    ClientActions.logout();
     this.context.router.push('/login');
   },
   render: function () {

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   validates :name, :email, :password_digest, :session_token, presence: true
+  validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 

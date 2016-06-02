@@ -61,9 +61,11 @@
 
    input {
       background: rgba(255, 255, 255, 1);
+      box-sizing: border-box;
       border-radius: 4px;
       width: 100%;
       height: 45px;
+      padding: 10px 20px;
       color: #828a8b;
       border: 1px solid #cfd2d3;
       font-size: 1em;
@@ -74,10 +76,10 @@
 
    input:focus {
      border: 2px solid #1da3bf;
-     height: 43px;
    }
 
    label {
+     color: #323a3b;
      text-align: left;
    }
 
@@ -113,6 +115,7 @@
 
 
    .submit {
+     height: 45px;
      color: white;
      background-color: #1da3bf;
      text-align: center;
@@ -132,7 +135,22 @@
      height: 45px;
    }
 
+   #alert {
+      position:fixed;
+      color: white;
+      text-align: center;
+      width: 100%;
+      z-index: 10;
+      padding: 13px;
+      float: none;
+      font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+   }
 
+   .js-alert {
+     background-color: rgba(245, 209, 91, 0.8);
+     border-bottom: 1px solid #aa6e23;
+     transition: all 0.3 ease 0s;
+   }
 
    /* Landing page stuff */
 

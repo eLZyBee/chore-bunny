@@ -1,10 +1,24 @@
 var BookingApiUtil = require('../util/BookingApiUtil'),
   BunnyApiUtil = require('../util/BunnyApiUtil'),
   ChoreApiUtil = require('../util/ChoreApiUtil'),
-  RoomApiUtil = require('../util/RoomApiUtil');
-
+  RoomApiUtil = require('../util/RoomApiUtil'),
+  UserApiUtil = require('../util/UserApiUtil');
 
 module.exports = {
+
+  // Users
+  signup: function (credentials) {
+    UserApiUtil.signup(credentials);
+  },
+  login: function (credentials) {
+    UserApiUtil.login(credentials);
+  },
+  logout: function () {
+    UserApiUtil.logout();
+  },
+  fetchCurrentUser: function () {
+    UserApiUtil.fetchCurrentUser();
+  },
 
   // Bookings
   fetchAllBookings: function () {

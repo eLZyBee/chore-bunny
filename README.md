@@ -12,23 +12,23 @@ ChoreBunny is a web application inspired by TaskRabbit that will be built using 
 
 By the end of Week 9, this app will, at a minimum, incorporate the following:
 
-- [ ] New account creation, login, and guest/demo login.
+- [x] New account creation, login, and guest/demo login.
 - [ ] Smooth, bug-free navigation.
 - [ ] Adequate seed data to demonstrate the site's features.
 - [ ] The minimum features necessary for an TaskRabbit style emulation site: chore navigation, worker/bunny navigation and booking, full profile views and review writing/rating.
   - [ ] Searching for bunnies.
   - [ ] Making bookings for chores.
   - [ ] Reviewing bunnies.
-- [ ] Hosting on Heroku.
-- [ ] CSS styling that matches the essence of TaskRabbit styling.
+- [x] Hosting on Heroku.
+- [x] CSS styling that matches the essence of TaskRabbit styling.
 - [ ] A production README, replacing this README.
 
 ## Product Goals and Priorities
 
 ChoreBunny will allow users to do the following:
 
-- [ ] Create an account (MVP)
-- [ ] Log in / Log out, as parent including as a Guest parent (MVP)
+- [x] Create an account (MVP)
+- [x] Log in / Log out, as parent including as a Guest parent (MVP)
 - [ ] Search for workers/bunnies (MVP)
 - [ ] Making bookings for chores with individual bunnies (MVP)
 - [ ] Create and read reviews of workers/bunnies (MVP)
@@ -65,8 +65,8 @@ ChoreBunny will allow users to do the following:
 
 **Objective:** Rooms/Chores/Bunnies/Bookings can be created, read, edited and destroyed through the API.
 
-- [ ] create `Room` & `Chore` & `Bunny` & `Booking` models.
-- [ ] seed the database with a small amount of test data.
+- [x] create `Room` & `Chore` & `Bunny` & `Booking` models.
+- [x] seed the database with a small amount of test data.
 - [ ] CRUD API for rooms, chores, bunnies and bookings (`RoomController`, `ChoreController`, `BunnyController`, `BookingController`)
 - [ ] jBuilder views for rooms, chores, bunnies & bookings.
 - [ ] setup Webpack & Flux scaffold.

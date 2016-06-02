@@ -1,5 +1,7 @@
 # API Endpoints
 
+Items in italics are possible removals.
+
 ## HTML API
 
 ### Root
@@ -30,11 +32,11 @@
 
 ### Bunnies
 
-- `GET bunnies/:id`
-- `POST bunnies`
-- `PATCH bunnies/:id`
-- `GET chores/:id/bunnies`
-  - filtered by household
+- `GET /api/bunnies/:id`
+- `POST /api/bunnies`
+- `PATCH /api/bunnies/:id`
+*- `GET chores/:id/bunnies`
+  - filtered by household*
 
 ### Chores
 
@@ -44,22 +46,22 @@
   - `PATCH /api/chores/:id`
   - `DELETE /api/chores/:id`
 
-### AvailableChores
+### *AvailableChores
 
   - `GET bunnies/:id/available_chores`
   - `POST bunnies/:id/available_chores`
   - `DELETE bunnies/:id/available_chores/:id`
-  - `PATCH bunnies/:id/available_chores/:id`
+  - `PATCH bunnies/:id/available_chores/:id`*
 
 ### Bookings
 
+  - `GET /api/bookings`
+  - filter parents bookings
   - `GET /api/bookings/:id`
   - `DELETE /api/bookings/:id`
   - `PATCH /api/bookings/:id`
   - `POST /api/bookings`
-  - `GET /api/users/bookings`
-    - filter parents bookings
-  - `GET /api/bunnies/bookings`
+  - `GET /api/bunnies/:bunny_id/bookings`
     - filter bunnies bookings
 
 ### Reviews

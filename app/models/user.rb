@@ -9,6 +9,28 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
+  has_many(
+    :bookings,
+    class_name: "Booking",
+    foreign_key: :parent_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :appointments,
+    class_name: "Booking",
+    foreign_key: :bunny_id,
+    primary_key: :id
+  )
+
+  def upcoming_appointments
+    # ActiveRecord search to filter active appointments not yet complete.
+  end
+
+  def upcoming_bookings
+    # ActiveRecord search to filter active bookings not yet complete.
+  end
+
 	def password=(password)
     @password = password
 		self.password_digest = BCrypt::Password.create(password)

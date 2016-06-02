@@ -40,7 +40,7 @@ SessionStore.currentUser = function () {
 };
 
 SessionStore.errors = function () {
-  return _errors;
+  return [].slice.call(_errors);
 };
 
 SessionStore.currentUserHasBeenFetched = function () {

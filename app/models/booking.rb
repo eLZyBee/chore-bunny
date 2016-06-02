@@ -4,11 +4,11 @@ class Booking < ActiveRecord::Base
 
   belongs_to(
     :parent,
-    className: "User",
+    class_name: "User",
     foreign_key: :parent_id
   )
   belongs_to :bunny
   belongs_to :chore
   belongs_to :room
-  
+
 end

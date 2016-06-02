@@ -8,7 +8,6 @@ class Api::RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      login(@room)
       render "api/rooms/show"
     else
       @errors = @room.errors.full_messages
@@ -45,7 +44,7 @@ class Api::RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit(:name)
+    params.require(:room).permit(:name, :description)
   end
 
 end

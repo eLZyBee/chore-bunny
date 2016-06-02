@@ -31,7 +31,7 @@ module.exports = {
     $.ajax({
       type: 'PATCH',
       url: 'api/rooms/' + room.id,
-      data: {room: {name: room.name}},
+      data: {room: {name: room.name, description: room.description}},
       success: this.receiveSingleRoom,
       error: this.handleError
     });

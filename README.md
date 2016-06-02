@@ -69,9 +69,9 @@ ChoreBunny will allow users to do the following:
 - [x] seed the database with a small amount of test data.
 - [x] CRUD API for rooms, chores, bunnies and bookings (`RoomController`, `ChoreController`, `BunnyController`, `BookingController`)
 - [x] jBuilder views for rooms, chores, bunnies & bookings.
-- [ ] setup Webpack & Flux scaffold.
-- [ ] setup `APIUtil` to interact with the API.
-- [ ] test out API interaction in the console.
+- [x] setup Webpack & Flux scaffold.
+- [x] setup `APIUtil` to interact with the API.
+- [x] test out API interaction in the console.
 
 ### Phase 3: Flux/React Architecture and Router (1.5 days)
 
@@ -84,7 +84,7 @@ user interface.
   - [ ] `Dashboard`
   - [ ] `ChoreBookingDetailsForm`
   - [ ] `BunnySearch`
-    - [ ] `BunnyList`
+    - [ ] `BunnyIndex`
   - [ ] `BookingConfirmationForm`
 - [ ] setup cancellation from bookings within `Dashboard`
 - [ ] save Bookings to the DB on confirmation.

@@ -8,7 +8,6 @@ class Api::ChoresController < ApplicationController
   def create
     @chore = Chore.new(chore_params)
     if @chore.save
-      login(@chore)
       render "api/chores/show"
     else
       @errors = @chore.errors.full_messages

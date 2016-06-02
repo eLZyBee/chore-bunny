@@ -12,6 +12,8 @@ var LoginForm = require('./components/LoginForm'),
 var SessionStore = require('./stores/SessionStore'),
   SessionApiUtil = require('./util/SessionApiUtil');
 
+ClientActions = require('./actions/ClientActions');
+
 var App = React.createClass({
   render: function() {
     return (

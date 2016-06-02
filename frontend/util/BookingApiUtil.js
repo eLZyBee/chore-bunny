@@ -18,28 +18,36 @@ module.exports = {
       error: this.handleError
     });
   },
-  createBooking: function(room) {
+  createBooking: function(booking) {
     $.ajax({
       type: 'POST',
       url: 'api/bookings',
-      data: {room: room},
+      data: {booking: booking},
       success: this.receiveSingleBooking,
       error: this.handleError
     });
   },
-  updateBooking: function(room) {
+  updateBooking: function(booking) {
     $.ajax({
       type: 'PATCH',
-      url: 'api/bookings/' + room.id,
-      data: {room: {name: room.name}},
+      url: 'api/bookings/' + booking.id,
+      data: {booking: {
+        details: booking.details,
+        bunny_id: booking.bunny_id,
+        parent_id: booking.parent_id,
+        chore_id: booking.chore_id,
+        room_id: booking.room_id,
+        date: booking.date,
+        completed: booking.completed
+      }},
       success: this.receiveSingleBooking,
       error: this.handleError
     });
   },
-  cancelBooking: function(room) {
+  cancelBooking: function(booking) {
     $.ajax({
       type: 'DELETE',
-      url: 'api/bookings/' + room.id,
+      url: 'api/bookings/' + booking.id,
       success: this.removeBooking,
       error: this.handleError
     });
@@ -52,16 +60,16 @@ module.exports = {
       bookings: bookings
     });
   },
-  receiveSingleBooking: function(room) {
+  receiveSingleBooking: function(booking) {
     AppDispatcher.dispatch({
       actionType: BookingConstants.RECEIVE_BOOKING,
-      room: room
+      booking: booking
     });
   },
-  removeBooking: function(room) {
+  removeBooking: function(booking) {
     AppDispatcher.dispatch({
       actionType: BookingConstants.REMOVE_BOOKING,
-      room: room
+      booking: booking
     });
   },
   handleError: function(error) {

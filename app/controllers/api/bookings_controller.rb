@@ -13,7 +13,6 @@ class Api::BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-			login(@booking)
 			render "api/bookings/show"
 		else
 			@errors = @booking.errors.full_messages

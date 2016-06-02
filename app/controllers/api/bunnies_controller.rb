@@ -8,7 +8,6 @@ class Api::BunniesController < ApplicationController
   def create
     @bunny = Bunny.new(bunny_params)
     if @bunny.save
-      login(@bunny)
       render "api/bunnies/show"
     else
       @errors = @bunny.errors.full_messages

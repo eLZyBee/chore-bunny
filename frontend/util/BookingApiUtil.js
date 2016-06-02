@@ -4,7 +4,7 @@ var AppDispatcher = require('../dispatcher/Dispatcher'),
 module.exports = {
   handleError: function(error) {
     AppDispatcher.dispatch({
-      actionType: UserConstants.ERROR,
+      actionType: BookingConstants.ERROR,
       errors: error.responseJSON.errors
     });
   }

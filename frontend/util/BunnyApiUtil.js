@@ -38,7 +38,7 @@ module.exports = {
 
   handleError: function(error) {
     AppDispatcher.dispatch({
-      actionType: UserConstants.ERROR,
+      actionType: BunnyConstants.ERROR,
       errors: error.responseJSON.errors
     });
   }

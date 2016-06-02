@@ -1,9 +1,13 @@
 class Api::BookingsController < ApplicationController
 
   def index
-    @bookings = current_user.bookings
-    @appointments = current_user.appointments
-    render 'api/bookings/index'
+    if current_user
+      @bookings = current_user.bookings
+      @appointments = current_user.appointments
+      render 'api/bookings/index'
+    else
+      render json: nil
+    end
   end
 
   def create

@@ -151,6 +151,11 @@
   0. `POST /api/bookings` is called.
   0. `receiveSingleBooking` is set as the callback.
 
+* `updateBooking`
+  0. invoked from update booking button `onClick`
+  0. `PATCH /api/bookings/:id` is called.
+  0. `receiveSingleBooking` is set as the callback.
+
 * `fetchSingleBooking`
   0. invoked from `Dashboard` `didMount`/`willReceiveProps`
   0. `GET /api/bookings/:id` is called.

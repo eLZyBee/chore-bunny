@@ -22,12 +22,18 @@ var AuthForm = React.createClass({
   _handleErrors: function () {
     var self = this;
     this.errors = UserStore.errors();
-    $('#alert').addClass('js-alert')
-    this.setState({errors: this.errors.join('. ')});
-    setTimeout(function() {
-      $('#alert').removeClass('js-alert');
-      self.setState({errors: null});
-    }, 8000);
+    if (!(this.errors === undefined)) {
+      $('#alert').addClass('js-alert');
+      $('input').addClass('input-alert');
+      $('label').addClass('label-alert');
+      this.setState({errors: this.errors.join('. ')});
+      setTimeout(function() {
+        $('#alert').removeClass('js-alert');
+        $('input').removeClass('input-alert');
+        $('label').removeClass('label-alert');
+        self.setState({errors: null});
+      }, 8000);
+    }
   },
 
   componentDidMount: function () {

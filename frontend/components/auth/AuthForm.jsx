@@ -1,7 +1,7 @@
 var React = require('react'),
-  UserActions = require('../actions/UserActions'),
-  SessionStore = require('../stores/SessionStore'),
-  UserStore = require('../stores/UserStore'),
+  UserActions = require('../../actions/UserActions'),
+  SessionStore = require('../../stores/SessionStore'),
+  UserStore = require('../../stores/UserStore'),
   SignupForm = require('./SignupForm'),
   LoginForm = require('./LoginForm');
 

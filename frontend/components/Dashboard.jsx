@@ -9,7 +9,7 @@ var Dashboard = React.createClass ({
   componentDidMount: function () {
   },
   toBooking: function () {
-
+    this.context.router.push('/booking');
   },
   signout: function () {
     ClientActions.logout();

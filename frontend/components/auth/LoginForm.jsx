@@ -1,6 +1,6 @@
 var React = require('react'),
-  UserActions = require('../actions/UserActions'),
-  SessionStore = require('../stores/SessionStore');
+  UserActions = require('../../actions/UserActions'),
+  SessionStore = require('../../stores/SessionStore');
 
 var LoginForm = React.createClass({
   contextTypes: {

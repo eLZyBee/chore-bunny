@@ -6,7 +6,8 @@ var Router = require('react-router').Router,
   IndexRoute = require('react-router').IndexRoute,
   hashHistory = require('react-router').hashHistory;
 
-var AuthForm = require('./components/AuthForm'),
+var AuthForm = require('./components/auth/AuthForm'),
+  Booking = require('./components/booking/Booking'),
   Dashboard = require('./components/Dashboard');
 
 var SessionStore = require('./stores/SessionStore'),
@@ -30,6 +31,7 @@ var router = (
       <IndexRoute component={AuthForm}/>
       <Route path='login' component={AuthForm}/>
       <Route path='home' component={Dashboard} onEnter={ _ensureLoggedIn }/>
+      <Route path='booking' component={Booking} onEnter={ _ensureLoggedIn }/>
     </Route>
   </Router>
 );

@@ -3,25 +3,24 @@ var React = require('react'),
   BookingDetailsForm = require('./BookingDetailsForm'),
   BunnySearchForm = require('./BunnySearchForm'),
   BookingConfirmationForm = require('./BookingConfirmationForm'),
-  ClientActions = require('../../actions/ClientActions'),
   BookingStore = require('../../stores/BookingStore');
 
 var Booking = React.createClass({
   getInitialState: function () {
     return({
       stage: 1,
-      details: null,
-      date: null,
-      room_id: null,
-      chore_id: null,
+      parent_id: SessionStore.currentUser().id,
       bunny_id: null,
-      parent_id: SessionStore.currentUser().id
+      form: {
+        details: null,
+        date: null,
+        time: null,
+        room_id: null,
+        chore_id: null
+      }
     });
   },
   componentDidMount: function () {
-    ClientActions.fetchAllRooms();
-    ClientActions.fetchAllChores();
-    ClientActions.fetchAllBunnies();
     this.errorListener = BookingStore.addListener(this._onErrors);
   },
   componentWillUnmount: function () {
@@ -39,37 +38,32 @@ var Booking = React.createClass({
       this.createBooking();
     }
   },
+  updateForm: function (obj) {
+    this.setState({form: obj});
+  },
+  updateBunny: function (bunny) {
+    this.setState({bunny: bunny});
+  },
   createBooking: function () {
+    debugger
     // create a booking!
   },
   render: function () {
     var stage;
 
     if (this.state.stage === 1) {
-      stage = <BookingDetailsForm
-        nextStage={this.nextStage}
-        detailsState={this.state.details}
-        dateState={this.state.date}
-        roomState={this.state.room_id}
-        choreState={this.state.chore_id}/>;
+      stage = <BookingDetailsForm nextStage={this.nextStage} updateForm={this.updateForm}/>;
     } else if (this.state.stage === 2) {
-      stage = <BunnySearchForm
-        nextStage={this.nextStage}
-        bunnyState={this.state.bunny_id}/>;
+      stage = <BunnySearchForm nextStage={this.nextStage} updateBunny={this.updateBunny}/>;
     } else {
-      stage = <BookingConfirmationForm
-        nextStage={this.nextStage}
-        dateState={this.state.date}
-        choreState={this.state.chore_id}
-        bunnyState={this.state.bunny_id}
-        />;
+      stage = <BookingConfirmationForm nextStage={this.nextStage}/>;
     }
 
     return (
       <div className="booking">
         <div className="header group">
           <nav>
-            <img src={textUrl}/>
+            <a href='#/home'><img src={textUrl}/></a>
             <button onClick={this.signout}>Sign out</button>
           </nav>
         </div>

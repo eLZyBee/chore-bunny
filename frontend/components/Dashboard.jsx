@@ -20,7 +20,7 @@ var Dashboard = React.createClass ({
       <div className="dashboard">
         <div className="header group">
           <nav>
-            <img src={textUrl}/>
+            <a href='#/home'><img src={textUrl}/></a>
             <button onClick={this.signout}>Sign out</button>
           </nav>
         </div>

@@ -8,7 +8,9 @@ var _chores = {};
 var _errors;
 
 ChoreStore.all = function () {
-  return _chores;
+  return Object.keys(_chores).map(function(chore_id) {
+    return _chores[chore_id];
+  });
 };
 
 ChoreStore.find = function (id) {

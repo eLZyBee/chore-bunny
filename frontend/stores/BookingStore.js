@@ -8,7 +8,9 @@ var _bookings = {};
 var _errors;
 
 BookingStore.all = function () {
-  return _bookings;
+  return Object.keys(_bookings).map(function(booking_id) {
+    return _bookings[booking_id];
+  });
 };
 
 BookingStore.find = function (id) {

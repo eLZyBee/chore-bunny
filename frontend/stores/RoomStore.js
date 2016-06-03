@@ -8,7 +8,9 @@ var _rooms = {};
 var _errors;
 
 RoomStore.all = function () {
-  return _rooms;
+  return Object.keys(_rooms).map(function(room_id) {
+    return _rooms[room_id];
+  });
 };
 
 RoomStore.find = function (id) {

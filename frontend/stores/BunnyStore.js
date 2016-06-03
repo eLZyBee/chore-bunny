@@ -8,7 +8,9 @@ var _bunnies = {};
 var _errors;
 
 BunnyStore.all = function () {
-  return _bunnies;
+  return Object.keys(_bunnies).map(function(bunny_id) {
+    return _bunnies[bunny_id];
+  });
 };
 
 BunnyStore.find = function (id) {

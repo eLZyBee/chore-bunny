@@ -1,11 +1,12 @@
-html, body, section, input, article, h1, h2, p, input, form,
-button, label {
+html, body, section, input, article, h1, h2, h3, h4, h5, h6, p, input, form,
+button, label, ul, li, br {
   margin: 0;
   border: 0;
   padding: 0;
   font: inherit;
   text-align: inherit;
   text-decoration: inherit;
+  list-style: none;
   color: inherit;
   background: transparent;
 }

@@ -36,3 +36,62 @@ nav button {
   display: block;
   clear: both;
 }
+
+.getting-started {
+  font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+.getting-started h2 {
+  font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
+  margin: 0px 0px 20px 0px;
+}
+
+.getting-started h3 {
+  font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
+  color: #00964b;
+}
+
+.getting-started p {
+  font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0px 0px 20px 0px;
+}
+
+.getting-started li {
+}
+
+.content {
+}
+
+.badge {
+  background: #00964b;
+  border-radius: 50%;
+  float:left;
+  padding: 9px 10px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  margin: 0px 20px 20px 0px;
+}
+
+.button {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0);
+  text-align: center;
+  padding: 0.5em 3em 0.5em;
+  font-size: 1.25rem;
+  margin: 10px 0px;
+  border: 1px solid #00964b;
+  font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
+  color: #00964b;
+  z-index: 2;
+}
+
+.button:hover {
+  background-color: #00964b;
+  color: white;
+  cursor: pointer;
+}

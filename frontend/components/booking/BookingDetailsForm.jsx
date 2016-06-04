@@ -12,33 +12,41 @@ var BookingDetailsForm = React.createClass({
     })
   },
   componentDidMount: function () {
-    ClientActions.fetchAllRooms();
-    ClientActions.fetchAllChores();
     this.roomListener = RoomStore.addListener(this._roomChange);
     this.choreListener = ChoreStore.addListener(this._choreChange);
+    ClientActions.fetchAllRooms();
+    ClientActions.fetchAllChores();
+  },
+  componentWillUnmount: function () {
+    this.roomListener.remove();
+    this.choreListener.remove();
   },
   _roomChange: function () {
     this.rooms = RoomStore.all();
-    this.forceUpdate();
+    if (this.chores) {
+      this.forceUpdate();
+    }
   },
   _choreChange: function () {
     this.chores = ChoreStore.all();
-    this.forceUpdate();
+    if (this.rooms) {
+      this.forceUpdate();
+    }
   },
   updateForm: function () {
     this.props.updateForm({form: this.state})
   },
   updateDetails: function (e) {
-    this.updateForm();
     this.setState({details: e.target.value})
+    this.updateForm();
   },
   updateRoom: function (e) {
-    this.updateForm();
     this.setState({room_id: e.target.value})
+    this.updateForm();
   },
   updateChore: function (e) {
-    this.updateForm();
     this.setState({chore_id: e.target.value})
+    this.updateForm();
   },
 
   render: function () {

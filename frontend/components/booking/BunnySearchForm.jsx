@@ -2,23 +2,16 @@ var React = require('react'),
   BunnyIndex = require('./BunnyIndex');
 
 var BunnySearch = React.createClass({
-  getInitialState: function () {
-    return ({
-      bunny_id: null,
-      date: null,
-      time: null
-    })
+  componentDidMount: function () {
   },
-  updateForm: function () {
-    this.props.updateForm({form: this.state})
+  updateBunny: function (e) {
+    this.props.updateBunny({bunny: e.target.value});
   },
   updateDate: function (e) {
-    this.updateForm();
-    this.setState({date: e.target.value})
+    this.props.updateDate({date: e.target.value})
   },
   updateTime: function (e) {
-    this.updateForm();
-    this.setState({time: e.target.value})
+    this.props.updateTime({time: e.target.value})
   },
   render: function () {
     return (

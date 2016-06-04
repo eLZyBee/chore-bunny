@@ -1,0 +1,38 @@
+.stage-header {
+    text-align: center;
+    background: white
+}
+
+.stage-header ul {
+  color: #b4b9b9;
+  width: 960px;
+  margin: auto;
+
+}
+
+.stage-items li {
+  float: left;
+  padding: 15px 75px;
+}
+
+.stage-items > li:nth-child(2) {
+  border-left: 1px solid #ebecec;
+  border-right: 1px solid #ebecec;
+}
+
+.stage-complete {
+  color: #00964b;
+
+}
+
+.stage-active {
+  color: #00964b;
+  font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
+
+}
+
+.booking-form {
+  width: 960px;
+  margin: auto;
+  padding: 10px 20px;
+}

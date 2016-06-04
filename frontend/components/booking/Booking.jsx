@@ -40,8 +40,8 @@ var Booking = React.createClass({
   _onErrors: function () {
     // handle errors
   },
-  nextStage: function (e) {
-    e.preventDefault();
+  nextStage: function () {
+    event.preventDefault();
     if (this.state.stage === 1) {
       this.setState({ stage: 2 });
       $('#1').removeClass('stage-active');

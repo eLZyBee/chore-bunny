@@ -34,18 +34,18 @@ var BookingDetailsForm = React.createClass({
     }
   },
   updateForm: function () {
-    this.props.updateForm({form: this.state})
+    this.props.updateForm(this.state);
   },
   updateDetails: function (e) {
-    this.setState({details: e.target.value})
+    this.setState({details: e.target.value});
     this.updateForm();
   },
   updateRoom: function (e) {
-    this.setState({room_id: e.target.value})
+    this.setState({room_id: e.target.value});
     this.updateForm();
   },
   updateChore: function (e) {
-    this.setState({chore_id: e.target.value})
+    this.setState({chore_id: e.target.value});
     this.updateForm();
   },
 

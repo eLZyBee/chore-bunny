@@ -8,10 +8,10 @@ var BunnySearch = React.createClass({
   //   this.props.updateBunny({bunny: e.target.value});
   // },
   updateDate: function (e) {
-    this.props.updateDate({date: e.target.value})
+    this.props.updateDate({date: e.target.value});
   },
   updateTime: function (e) {
-    this.props.updateTime({time: e.target.value})
+    this.props.updateTime({time: e.target.value});
   },
   render: function () {
     return (

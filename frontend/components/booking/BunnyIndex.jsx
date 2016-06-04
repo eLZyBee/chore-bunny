@@ -20,11 +20,12 @@ var BunnyIndex = React.createClass({
     var self = this;
 
     if (this.bunnies) {
-      bunnies = this.bunnies.map(function(bunny) {
+      bunnies = this.bunnies.map(function(bunny, i) {
         return <BunnyIndexItem
           nextStage={self.props.nextStage}
           updateBunny={self.props.updateBunny}
-          key={bunny.id}
+          bunnyId={bunny.id}
+          key={i}
           bunnyName={bunny.user.name}/>
       })
     } else {

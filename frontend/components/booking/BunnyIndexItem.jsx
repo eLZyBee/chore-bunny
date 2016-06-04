@@ -2,7 +2,8 @@ var React = require('react');
 
 var BunnyIndexItem = React.createClass({
   handleSubmit: function () {
-    this.props.updateBunny(this.props.key);
+    this.props.updateBunny(this.props.bunnyId);
+    this.props.nextStage();
   },
   render: function () {
     return(

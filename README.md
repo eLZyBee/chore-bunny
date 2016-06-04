@@ -78,12 +78,12 @@ ChoreBunny will allow users to do the following:
 **Objective:** Bookings can be created, read, edited and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [x] setup the flux loop with skeleton files
+- [x] setup React Router
 - implement each Booking component, building out the flux loop as needed.
-  - [ ] `Dashboard`
-  - [ ] `ChoreBookingDetailsForm`
-  - [ ] `BunnySearch`
+  - [x] `Dashboard`
+  - [ ] `BookingDetailsForm`
+  - [ ] `BunnySearchForm`
     - [ ] `BunnyIndex`
   - [ ] `BookingConfirmationForm`
 - [ ] setup cancellation from bookings within `Dashboard`

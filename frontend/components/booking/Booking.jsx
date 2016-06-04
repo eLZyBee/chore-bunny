@@ -7,9 +7,8 @@ var React = require('react'),
   ClientActions = require('../../actions/ClientActions');
 
 function parseDate(date, time) {
-  var year, month, day, hour, minutes;
-
-  return new Date();
+  var datetime = date.date + ' ' + time.time;
+  return new Date(datetime);
 }
 // new Date(year, month[, day[, hour
 // [, minutes[, seconds[, milliseconds]]]]]);

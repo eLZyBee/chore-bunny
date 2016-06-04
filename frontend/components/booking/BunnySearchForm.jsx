@@ -4,9 +4,9 @@ var React = require('react'),
 var BunnySearch = React.createClass({
   componentDidMount: function () {
   },
-  updateBunny: function (e) {
-    this.props.updateBunny({bunny: e.target.value});
-  },
+  // updateBunny: function (e) {
+  //   this.props.updateBunny({bunny: e.target.value});
+  // },
   updateDate: function (e) {
     this.props.updateDate({date: e.target.value})
   },
@@ -15,17 +15,24 @@ var BunnySearch = React.createClass({
   },
   render: function () {
     return (
-      <form onSubmit={this.props.nextStage} className="booking-details">
+      <div className="booking-details">
         <h1> I am a bunny search form </h1>
-        <label>CHORE DATE & TIME
-          <input onChange={this.updateDate} type="date"/>
-          <input onChange={this.updateTime} type="time"/>
-        </label>
-        <label>PICK A BUNNY
-          <BunnyIndex/>
-        </label>
-        <input type="submit" value="Continue"/>
-      </form>
+        <div className="datetime">
+          <label>CHORE DATE & TIME
+            <input onChange={this.updateDate} type="date"/>
+            <input onChange={this.updateTime} type="time"/>
+          </label>
+        </div>
+        <div className='booking-section'>
+          <div className="bunnies">
+            <label>PICK A BUNNY
+              <BunnyIndex
+                nextStage={this.props.nextStage}
+                updateBunny={this.props.updateBunny}/>
+            </label>
+          </div>
+        </div>
+      </div>
     );
   }
 });

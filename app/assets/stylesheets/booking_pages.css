@@ -36,3 +36,56 @@
   margin: auto;
   padding: 10px 20px;
 }
+
+.booking-form .submit {
+  margin: auto;
+  font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.booking-details {
+  margin: 0;
+}
+
+/*Booking section applies to all stage forms*/
+
+.booking-section {
+  background: white;
+  border-radius: 0%;
+  box-shadow: 0px 2px 2px 0px rgba(50,58,59,0.15);
+  margin: 10px 20px;
+}
+
+.booking-section input {
+  width: 340px;
+  display: block;
+  margin: 10px 0px;
+}
+
+.booking-section label {
+  padding: 15px 20px;
+  display: block;
+}
+/* BunnySearchForm */
+
+.datetime {
+  float: left;
+  position: fixed;
+  background: white;
+  border-radius: 0%;
+  box-shadow: 0px 2px 2px 0px rgba(50,58,59,0.15);
+}
+
+.datetime input {
+  width: 340px;
+  display: block;
+  margin: 10px 0px;
+}
+
+.datetime label {
+  padding: 15px 20px;
+  display: block;
+}
+
+.bunnies {
+}

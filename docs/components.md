@@ -10,8 +10,8 @@
 			* `ChoreIndexItem`
   * `RoomIndex`
     * `RoomIndexChore`
-	* `ChoreBooking`
-		* `ChoreBookingDetailsForm`
+	* `Booking`
+		* `BookingDetailsForm`
       * `ChoreDetailsItem`
 		* `BunnySearch`
 			* `QuickAssignment`

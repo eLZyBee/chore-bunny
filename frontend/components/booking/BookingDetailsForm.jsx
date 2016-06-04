@@ -72,22 +72,26 @@ var BookingDetailsForm = React.createClass({
     return (
       <form onSubmit={this.props.nextStage} className="booking-details">
         <h1> I am a booking details form </h1>
-        <label>CHOOSE CHORE LOCATION
-          <select onChange={this.updateRoom}>
-            <option/>
-            {roomOptions}
-          </select>
-        </label>
-        <label>CHOOSE CHORE
-          <select onChange={this.updateChore}>
-            <option/>
-            {choreOptions}
-          </select>
-        </label>
-        <label>DESCRIBE YOUR CHORE
-          <textarea onChange={this.updateDetails} rows='10' cols='50'>{this.state.details}</textarea>
-        </label>
-        <input type="submit" value="Continue"/>
+        <div className='booking-section'>
+          <label>CHOOSE CHORE LOCATION
+            <select onChange={this.updateRoom}>
+              <option/>
+              {roomOptions}
+            </select>
+          </label>
+          <label>CHOOSE CHORE
+            <select onChange={this.updateChore}>
+              <option/>
+              {choreOptions}
+            </select>
+          </label>
+        </div>
+        <div className='booking-section'>
+          <label>DESCRIBE YOUR CHORE
+            <textarea onChange={this.updateDetails} rows='10' cols='50'>{this.state.details}</textarea>
+          </label>
+          <input className='submit' type="submit" value="Save"/>
+        </div>
       </form>
     );
   }

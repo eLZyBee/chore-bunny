@@ -1,17 +1,56 @@
-var React = require('react');
+var React = require('react'),
+  ChoreStore = require('../../stores/ChoreStore'),
+  RoomStore = require('../../stores/RoomStore'),
+  BunnyStore = require('../../stores/BunnyStore'),
+  ClientActions = require('../../actions/ClientActions');
 
 var BookingConfirmationForm = React.createClass({
-  render: function () {
-    return (
-      <form onSubmit={this.props.nextStage} className="booking-details">
-        <div className='booking-section'>
-          <h1> Are these details correct? </h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  componentDidMount: function () {
+    this.choreListener = ChoreStore.addListener(this._choreChange);
+    this.roomListener = RoomStore.addListener(this._roomChange);
+    this.bunnyListener = BunnyStore.addListener(this._bunnyChange);
+    ClientActions.fetchSingleChore(this.props.finalDetails.form.chore_id);
+    ClientActions.fetchSingleRoom(this.props.finalDetails.form.room_id);
+    ClientActions.fetchSingleBunny(this.props.finalDetails.bunny_id);
+  },
+  componentWillUnmount: function () {
+    this.choreListener.remove();
+    this.roomListener.remove();
+    this.bunnyListener.remove();
+  },
+  _choreChange: function () {
+    this.chore = ChoreStore.find(this.props.finalDetails.form.chore_id);
+    (this.chore && this.room && this.bunny) ? this.forceUpdate() : null;
+  },
+  _roomChange: function () {
+    this.room = RoomStore.find(this.props.finalDetails.form.room_id);
+    (this.chore && this.room && this.bunny) ? this.forceUpdate() : null;
 
-          <input className='submit' type="submit" value="Confirm"/>
-        </div>
-      </form>
-    );
+  },
+  _bunnyChange: function () {
+    this.bunny = BunnyStore.find(this.props.finalDetails.bunny_id);
+    (this.chore && this.room && this.bunny) ? this.forceUpdate() : null;
+
+  },
+  render: function () {
+    if (this.chore && this.room && this.bunny) {
+      return (
+        <form onSubmit={this.props.nextStage} className="booking-details">
+          <div className='booking-section'>
+            <h1> Are these details correct? </h1>
+            <p>CHORE <br/><strong>{this.chore.name}</strong></p>
+            <p>ROOM <br/><strong>{this.room.name}</strong></p>
+            <p>BUNNY <br/><strong>{this.bunny.user.name}</strong></p>
+            <p>DETAILS <br/><strong>{this.props.finalDetails.form.details}</strong></p>
+            <input className='submit' type="submit" value="Confirm & Book"/>
+          </div>
+        </form>
+      );
+    } else {
+      return (
+        <p>Loading...</p>
+      )
+    }
   }
 });
 

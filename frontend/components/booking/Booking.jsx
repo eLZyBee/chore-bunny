@@ -10,8 +10,6 @@ function parseDate(date, time) {
   var datetime = date.date + ' ' + time.time;
   return new Date(datetime);
 }
-// new Date(year, month[, day[, hour
-// [, minutes[, seconds[, milliseconds]]]]]);
 
 var Booking = React.createClass({
   contextTypes: {
@@ -40,23 +38,29 @@ var Booking = React.createClass({
   _onErrors: function () {
     // handle errors
   },
-  nextStage: function () {
-    event.preventDefault();
-    if (this.state.stage === 1) {
+  formComplete: function () {
+    return (this.state.form.details && this.state.form.room_id && this.state.form.chore_id);
+  },
+  secondFormComplete: function () {
+    return (this.state.date && this.state.time && this.state.bunny_id);
+  },
+  nextStage: function (e) {
+    e.preventDefault();
+    if ((this.state.stage === 1) && this.formComplete()) {
       this.setState({ stage: 2 });
       $('#1').removeClass('stage-active');
       $('#1').addClass('stage-complete');
       $('#2').addClass('stage-active');
-    } else if (this.state.stage === 2) {
+    } else if ((this.state.stage === 2) && this.secondFormComplete()) {
       this.setState({ stage: 3 });
       $('#2').removeClass('stage-active');
       $('#2').addClass('stage-complete');
       $('#3').addClass('stage-active');
-    } else {
-
+    } else if (this.state.stage === 3){
       this.createBooking();
     }
   },
+
   updateForm: function (obj) {
     this.setState({form: obj});
   },
@@ -70,8 +74,7 @@ var Booking = React.createClass({
     this.setState({time: time});
   },
   createBooking: function () {
-    debugger
-    // create a booking!
+
     ClientActions.createBooking(
       {
         bunny_id: this.state.bunny_id,

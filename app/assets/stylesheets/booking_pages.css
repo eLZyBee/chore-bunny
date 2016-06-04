@@ -66,6 +66,20 @@
   padding: 15px 20px;
   display: block;
 }
+
+.booking-section h1 {
+  padding: 20px;
+}
+
+.booking-section p {
+  padding: 10px 20px;
+}
+
+.booking-section strong {
+  color: #1da3bf;
+  font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+
+}
 /* BunnySearchForm */
 
 .datetime {

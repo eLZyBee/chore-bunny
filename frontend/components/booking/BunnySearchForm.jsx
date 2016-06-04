@@ -4,9 +4,6 @@ var React = require('react'),
 var BunnySearch = React.createClass({
   componentDidMount: function () {
   },
-  // updateBunny: function (e) {
-  //   this.props.updateBunny({bunny: e.target.value});
-  // },
   updateDate: function (e) {
     this.props.updateDate({date: e.target.value});
   },

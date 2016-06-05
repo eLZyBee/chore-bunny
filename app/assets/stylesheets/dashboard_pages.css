@@ -31,6 +31,18 @@ nav button {
   font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
 }
 
+.main-dash img {
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  float: left;
+  margin-right: 25px
+}
+
+.welcome {
+  margin-top: 25px;
+}
+
 .group:after {
   content: '';
   display: block;

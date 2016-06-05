@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
+  # Paperclip configuration
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "bunny.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   has_many(
     :bookings,
     class_name: "Booking",

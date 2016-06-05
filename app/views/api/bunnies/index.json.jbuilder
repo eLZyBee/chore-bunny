@@ -1,4 +1,8 @@
 json.array! @bunnies do |bunny|
   json.id bunny.id
-  json.user bunny.user
+  json.user do
+    json.user_id bunny.user.id
+    json.name bunny.user.name
+    json.image_url bunny.user.image.url
+  end
 end

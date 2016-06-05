@@ -1,1 +1,4 @@
-json.extract! @user, :id, :email, :name
+json.id @user.id
+json.email @user.email
+json.name @user.name
+json.image_url asset_path(@user.image.url)

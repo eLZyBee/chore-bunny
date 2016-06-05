@@ -25,8 +25,8 @@ var Dashboard = React.createClass ({
         </div>
         <div className="main-dash">
           <div className="getting-started">
-            <img/>
-            <h1>{'Welcome to ChoreBunny, ' + SessionStore.currentUser().name + '!'}</h1>
+            <img src={SessionStore.currentUser().image_url}/>
+            <h1 className='welcome'>{'Welcome to ChoreBunny, ' + SessionStore.currentUser().name + '!'}</h1>
             <button className='button' onClick={this.toBooking}>Make a Booking</button>
             <BookingIndex/>
             <h2>How to Get Started</h2>

@@ -82,27 +82,27 @@ user interface.
 - [x] setup React Router
 - implement each Booking component, building out the flux loop as needed.
   - [x] `Dashboard`
-  - [ ] `BookingDetailsForm`
-  - [ ] `BunnySearchForm`
-    - [ ] `BunnyIndex`
-  - [ ] `BookingConfirmationForm`
-- [ ] setup cancellation from bookings within `Dashboard`
-- [ ] save Bookings to the DB on confirmation.
+  - [x] `BookingDetailsForm`
+  - [x] `BunnySearchForm`
+    - [x] `BunnyIndex`
+      - [x] `BunnyIndexItem`
+  - [x] `BookingConfirmationForm`
+- [x] setup cancellation from bookings within `Dashboard`
+- [x] save Bookings to the DB on confirmation.
 
 ### Phase 4: Start Styling (0.5 days)
 
 **Objective:** Existing pages (including signup/login) will look good.
 
 - [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [x] position elements on the page
+- [x] add basic colors & styles
 
 ### Phase 5: Implement detailed Booking Stages (1 day)
 
 **Objective:** Add `BookingStageHeader`, `BookingDetailsForm`, `BunnySearch`, `Scheduler`, `QuickAssignment` and `BunnyFilter` components to booking process.
 
-- [ ] create `BookingStageHeader`, `BookingDetailsForm` and `BunnySearch` components.
-  - [ ] Apply CSS styling to these.
+- [x] create `BookingStageHeader` and style `BookingDetailsForm` and `BunnySearchForm` components.
 - [ ] create `Scheduler`, `QuickAssignment` and `BunnyFilter` components.
   - [ ] Apply CSS styling to these.
 
@@ -137,6 +137,6 @@ user interface.
 ### Bonus Features (TBD)
 - [ ] Sign in as Bunny, manage bookings.
 - [ ] Smart component population (popular chores show in Dashboard)
-- [ ] Add booking cancellations.
+- [ ] Add booking cancellations for bunnies.
 - [ ] Allow users to upload profile pictures.
 - [ ] Log in with Google / Facebook.

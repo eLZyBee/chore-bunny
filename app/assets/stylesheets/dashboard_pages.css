@@ -11,6 +11,11 @@ body {
   border-bottom: 1px solid #ebecec;
 }
 
+.header nav {
+  width: 1200px;
+  margin: auto;
+}
+
 nav img {
   float: left;
   max-height: 40px;

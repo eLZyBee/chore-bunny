@@ -200,3 +200,7 @@
 .booking-item button {
   float: right;
 }
+
+.booking-item img {
+  padding: 15px;
+}

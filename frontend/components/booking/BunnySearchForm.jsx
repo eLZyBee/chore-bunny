@@ -12,21 +12,21 @@ var BunnySearch = React.createClass({
   },
   render: function () {
     return (
-      <div className="booking-details">
-        <h1> I am a bunny search form </h1>
-        <div className="datetime">
-          <label>CHORE DATE & TIME
-            <input onChange={this.updateDate} type="date"/>
-            <input onChange={this.updateTime} type="time"/>
-          </label>
+      <div className="booking-details group">
+        <h1>Pick a bunny</h1>
+        <div className="container-datetime">
+          <div className="datetime">
+            <label>CHORE DATE & TIME
+              <input onChange={this.updateDate} type="date"/>
+              <input onChange={this.updateTime} type="time"/>
+            </label>
+          </div>
         </div>
         <div className='booking-section'>
           <div className="bunnies">
-            <label>PICK A BUNNY
-              <BunnyIndex
-                nextStage={this.props.nextStage}
-                updateBunny={this.props.updateBunny}/>
-            </label>
+            <BunnyIndex
+              nextStage={this.props.nextStage}
+              updateBunny={this.props.updateBunny}/>
           </div>
         </div>
       </div>

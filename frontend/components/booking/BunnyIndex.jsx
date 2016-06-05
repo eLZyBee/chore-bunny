@@ -17,15 +17,16 @@ var BunnyIndex = React.createClass({
   },
   render: function () {
     var bunnies;
-    
+
     if (this.bunnies) {
       bunnies = this.bunnies.map(function(bunny, i) {
-        return <BunnyIndexItem
-          nextStage={this.props.nextStage}
-          updateBunny={this.props.updateBunny}
-          bunnyId={bunny.id}
-          key={i}
-          bunnyName={bunny.user.name}/>
+        return (<div key={i} className='bunny group'>
+            <BunnyIndexItem
+            nextStage={this.props.nextStage}
+            updateBunny={this.props.updateBunny}
+            bunnyId={bunny.id}
+            bunnyName={bunny.user.name}/>
+        </div>)
       }.bind(this));
     } else {
       bunnies = [];
@@ -33,8 +34,10 @@ var BunnyIndex = React.createClass({
 
     return (
       <div>
-        <p>{bunnies.length} Bunnies Available</p>
-        {bunnies}
+        <div className="bunny-show">{bunnies.length} Bunnies Available</div>
+        <div className='bunny-list'>
+          {bunnies}
+        </div>
       </div>
     )
   }

@@ -34,20 +34,67 @@
 .booking-form {
   width: 960px;
   margin: auto;
-  padding: 10px 20px;
+  padding: 10px 0px;
 }
 
 .booking-form .submit {
   margin: auto;
   font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
   font-size: 18px;
+  width: auto;
 }
 
 .booking-details {
   margin: 0;
 }
 
+.booking-details h1 {
+  padding: 10px 20px;
+}
+
+.booking-details select {
+  background: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 100%;
+  height: 45px;
+  padding: 10px 20px;
+  color: #828a8b;
+  border: 1px solid #cfd2d3;
+  font-size: 1em;
+  margin: auto;
+  margin: 0px 0px 10px 0px;
+  outline: none;
+}
+
+.booking-details select:focus {
+  border: 2px solid #1da3bf;
+}
+
+.booking-details textarea {
+  background: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 100%;
+  height: 200px;
+  padding: 10px 20px;
+  color: #828a8b;
+  border: 1px solid #cfd2d3;
+  font-size: 1em;
+  margin: auto;
+  margin: 0px 0px 10px 0px;
+  outline: none;
+}
+
+.booking-details textarea:focus {
+  border: 2px solid #1da3bf;
+}
+
 /*Booking section applies to all stage forms*/
+
+.nudge-down {
+  padding-bottom: 20px;
+}
 
 .booking-section {
   background: white;
@@ -57,7 +104,6 @@
 }
 
 .booking-section input {
-  width: 340px;
   display: block;
   margin: 10px 0px;
 }
@@ -81,6 +127,11 @@
 
 }
 /* BunnySearchForm */
+.container-datetime {
+  display: block;
+  float: left;
+  width: 280px;
+}
 
 .datetime {
   float: left;
@@ -91,7 +142,7 @@
 }
 
 .datetime input {
-  width: 340px;
+  width: 240px;
   display: block;
   margin: 10px 0px;
 }
@@ -102,4 +153,50 @@
 }
 
 .bunnies {
+  float:right;
+  width: 650px;
+  position: relative;
+  border-top: 1px solid lightgray;
+  padding-top: 25px;
+}
+
+.bunny {
+  background: white;
+  border-radius: 0%;
+  box-shadow: 0px 2px 2px 0px rgba(50,58,59,0.15);
+}
+
+.bunny-media {
+  width: 250px;
+  float: left;
+}
+
+.bunny-content {
+  display: block;
+}
+
+.bunny-show {
+  background: lightgray;
+  padding: 10px;
+  position: absolute;
+  top: -20px;
+  border-radius: 25px;
+  margin: 0px 225px;
+}
+
+/* Dashboard display for bookings */
+
+.booking-item {
+  background: white;
+  border-radius: 0%;
+  box-shadow: 0px 2px 2px 0px rgba(50,58,59,0.15);
+  margin: 20px 0px;
+}
+
+.booking-item h1 {
+  float: left;
+}
+
+.booking-item button {
+  float: right;
 }

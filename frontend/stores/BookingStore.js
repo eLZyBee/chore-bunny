@@ -24,7 +24,7 @@ BookingStore.updateBookings = function (bookings) {
 };
 
 BookingStore.deleteBooking = function (id) {
-  _bookings[id] = null;
+  delete _bookings[id];
 };
 
 BookingStore.setErrors = function (errors) {

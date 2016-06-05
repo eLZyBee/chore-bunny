@@ -71,7 +71,7 @@ var BookingDetailsForm = React.createClass({
 
     return (
       <form onSubmit={this.props.nextStage} className="booking-details">
-        <h1> I am a booking details form </h1>
+        <h1>Your Chore Details</h1>
         <div className='booking-section'>
           <label>CHOOSE CHORE LOCATION
             <select onChange={this.updateRoom}>
@@ -86,7 +86,7 @@ var BookingDetailsForm = React.createClass({
             </select>
           </label>
         </div>
-        <div className='booking-section'>
+        <div className='booking-section nudge-down'>
           <label>DESCRIBE YOUR CHORE
             <textarea onChange={this.updateDetails} rows='10' cols='50'>{this.state.details}</textarea>
           </label>

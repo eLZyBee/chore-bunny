@@ -33,8 +33,8 @@ module.exports = {
   updateBooking: function (booking) {
     BookingApiUtil.updateBooking(booking);
   },
-  cancelBooking: function (booking) {
-    BookingApiUtil.cancelBooking(booking);
+  cancelBooking: function (id) {
+    BookingApiUtil.cancelBooking(id);
   },
 
   // Bunnies

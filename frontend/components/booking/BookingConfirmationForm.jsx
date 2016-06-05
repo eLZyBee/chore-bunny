@@ -36,7 +36,7 @@ var BookingConfirmationForm = React.createClass({
     if (this.chore && this.room && this.bunny) {
       return (
         <form onSubmit={this.props.nextStage} className="booking-details">
-          <div className='booking-section'>
+          <div className='booking-section nudge-down'>
             <h1> Are these details correct? </h1>
             <p>CHORE <br/><strong>{this.chore.name}</strong></p>
             <p>ROOM <br/><strong>{this.room.name}</strong></p>

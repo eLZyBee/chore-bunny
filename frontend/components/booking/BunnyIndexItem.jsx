@@ -8,8 +8,12 @@ var BunnyIndexItem = React.createClass({
   render: function () {
     return(
       <form onSubmit={this.handleSubmit}>
-        <h2>I am {this.props.bunnyName}</h2>
-        <input className='submit' type='submit' value='Select & Continue'/>
+        <div className='bunny-media'>
+          <input className='submit' type='submit' value='Select & Continue'/>
+        </div>
+        <div className='bunny-content'>
+          <h1>{this.props.bunnyName}</h1>
+        </div>
       </form>
     )
   }

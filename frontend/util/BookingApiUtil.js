@@ -44,10 +44,10 @@ module.exports = {
       error: this.handleError
     });
   },
-  cancelBooking: function(booking) {
+  cancelBooking: function(id) {
     $.ajax({
       type: 'DELETE',
-      url: 'api/bookings/' + booking.id,
+      url: 'api/bookings/' + id,
       success: this.removeBooking,
       error: this.handleError
     });

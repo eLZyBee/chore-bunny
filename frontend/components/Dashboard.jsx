@@ -1,12 +1,11 @@
 var React = require('react'),
   ClientActions = require('../actions/ClientActions'),
-  SessionStore = require('../stores/SessionStore');
+  SessionStore = require('../stores/SessionStore'),
+  BookingIndex = require('./booking/BookingIndex');
 
 var Dashboard = React.createClass ({
   contextTypes: {
     router: React.PropTypes.object.isRequired
-  },
-  componentDidMount: function () {
   },
   toBooking: function () {
     this.context.router.push('/booking');
@@ -29,6 +28,7 @@ var Dashboard = React.createClass ({
             <img/>
             <h1>{'Welcome to ChoreBunny, ' + SessionStore.currentUser().name + '!'}</h1>
             <button className='button' onClick={this.toBooking}>Make a Booking</button>
+            <BookingIndex/>
             <h2>How to Get Started</h2>
             <p>Bunnies are eager for chores! Here's how it works:</p>
             <ul>

@@ -85,7 +85,6 @@ var Booking = React.createClass({
         room_id: this.state.form.room_id
       }
     )
-
     this.context.router.push('/home')
   },
   signout: function () {

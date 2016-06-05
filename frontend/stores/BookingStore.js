@@ -41,18 +41,22 @@ BookingStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case BookingConstants.RECEIVE_BOOKINGS:
       BookingStore.updateBookings(payload.bookings);
+      BookingStore.__emitChange();
       break;
     case BookingConstants.RECEIVE_BOOKING:
       BookingStore.updateBookings([payload.booking]);
+      BookingStore.__emitChange();
       break;
     case BookingConstants.REMOVE_BOOKING:
       BookingStore.deleteBooking(payload.booking.id);
+      BookingStore.__emitChange();
       break;
     case BookingConstants.ERROR:
       BookingStore.setErrors(payload.errors);
+      BookingStore.__emitChange();
       break;
   }
-  BookingStore.__emitChange();
+
 };
 
 module.exports = BookingStore;

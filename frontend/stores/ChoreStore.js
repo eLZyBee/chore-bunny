@@ -23,6 +23,11 @@ ChoreStore.updateChores = function (chores) {
   });
 };
 
+ChoreStore.resetChores = function (chores) {
+  _chores = {};
+  ChoreStore.updateChores(chores);
+};
+
 ChoreStore.deleteChore = function (id) {
   _chores[id] = null;
 };
@@ -40,19 +45,22 @@ ChoreStore.errors = function () {
 ChoreStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case ChoreConstants.RECEIVE_CHORES:
-      ChoreStore.updateChores(payload.chores);
+      ChoreStore.resetChores(payload.chores);
+      ChoreStore.__emitChange();
       break;
     case ChoreConstants.RECEIVE_CHORE:
       ChoreStore.updateChores([payload.chore]);
+      ChoreStore.__emitChange();
       break;
     case ChoreConstants.REMOVE_CHORE:
       ChoreStore.deleteChore(payload.chore.id);
+      ChoreStore.__emitChange();
       break;
     case ChoreConstants.ERROR:
       ChoreStore.setErrors(payload.errors);
+      ChoreStore.__emitChange();
       break;
   }
-  ChoreStore.__emitChange();
 };
 
 module.exports = ChoreStore;

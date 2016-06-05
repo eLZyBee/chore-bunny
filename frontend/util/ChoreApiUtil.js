@@ -18,6 +18,14 @@ module.exports = {
       error: this.handleError
     });
   },
+  fetchRoomChores: function(room_id) {
+    $.ajax({
+      type: 'GET',
+      url: 'api/rooms/' + room_id + '/chores',
+      success: this.receiveAllChores,
+      error: this.handleError
+    });
+  },
   createChore: function(chore) {
     $.ajax({
       type: 'POST',

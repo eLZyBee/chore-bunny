@@ -42,6 +42,7 @@ var BookingDetailsForm = React.createClass({
   },
   updateRoom: function (e) {
     this.setState({room_id: e.target.value});
+    ClientActions.fetchRoomChores(e.target.value);
     this.updateForm();
   },
   updateChore: function (e) {

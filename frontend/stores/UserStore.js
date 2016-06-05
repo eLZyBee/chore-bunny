@@ -36,15 +36,17 @@ UserStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case UserConstants.LOGIN:
       UserStore.login(payload.user);
+      UserStore.__emitChange();
       break;
     case UserConstants.LOGOUT:
       UserStore.logout();
+      UserStore.__emitChange();
       break;
     case UserConstants.ERROR:
       UserStore.setErrors(payload.errors);
+      UserStore.__emitChange();
       break;
   }
-  UserStore.__emitChange();
 };
 
 module.exports = UserStore;

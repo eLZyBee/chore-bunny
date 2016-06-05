@@ -41,18 +41,21 @@ RoomStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case RoomConstants.RECEIVE_ROOMS:
       RoomStore.updateRooms(payload.rooms);
+      RoomStore.__emitChange();
       break;
     case RoomConstants.RECEIVE_ROOM:
       RoomStore.updateRooms([payload.room]);
+      RoomStore.__emitChange();
       break;
     case RoomConstants.REMOVE_ROOM:
       RoomStore.deleteRoom(payload.room.id);
+      RoomStore.__emitChange();
       break;
     case RoomConstants.ERROR:
       RoomStore.setErrors(payload.errors);
+      RoomStore.__emitChange();
       break;
   }
-  RoomStore.__emitChange();
 };
 
 module.exports = RoomStore;

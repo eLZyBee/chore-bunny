@@ -45,6 +45,7 @@ Items in italics are possible removals.
   - `GET /api/chores/:id`
   - `PATCH /api/chores/:id`
   - `DELETE /api/chores/:id`
+  - `GET /api/rooms/:room_id/chores`
 
 ### *AvailableChores
 

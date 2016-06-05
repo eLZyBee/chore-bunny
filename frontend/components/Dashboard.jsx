@@ -1,7 +1,9 @@
 var React = require('react'),
   ClientActions = require('../actions/ClientActions'),
   SessionStore = require('../stores/SessionStore'),
-  BookingIndex = require('./booking/BookingIndex');
+  BookingIndex = require('./booking/BookingIndex'),
+  RoomsIndex = require('./rooms/RoomsIndex'),
+  Footer = require('./Footer');
 
 var Dashboard = React.createClass ({
   contextTypes: {
@@ -42,8 +44,8 @@ var Dashboard = React.createClass ({
               <li>
                 <div className='badge'>2</div>
                 <div className='content'>
-                  <h3>Get Bunny</h3>
-                  <p>We'll get you a skilled Bunny to meet your request</p>
+                  <h3>Pick a Bunny</h3>
+                  <p>Choose your most skilled Bunny to meet your request</p>
                 </div>
               </li>
               <li>
@@ -54,8 +56,11 @@ var Dashboard = React.createClass ({
                 </div>
               </li>
             </ul>
+            <h2>Popular Rooms with Chores</h2>
           </div>
+          <RoomsIndex/>
         </div>
+        <Footer/>
       </div>
     )
   }

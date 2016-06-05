@@ -1,7 +1,11 @@
 class Api::ChoresController < ApplicationController
 
   def index
-    @chores = Chore.all
+    if params[:room_id]
+      @chores = Room.find(params[:room_id]).chores
+    else
+      @chores = Chore.all
+    end
     render 'api/chores/index'
   end
 

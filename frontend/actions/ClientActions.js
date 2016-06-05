@@ -52,6 +52,9 @@ module.exports = {
   fetchSingleChore: function (id) {
     ChoreApiUtil.fetchSingleChore(id);
   },
+  fetchRoomChores: function (room_id) {
+    ChoreApiUtil.fetchRoomChores(room_id);
+  },
   createChore: function (chore) {
     ChoreApiUtil.createChore(chore);
   },

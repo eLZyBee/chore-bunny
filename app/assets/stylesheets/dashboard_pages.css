@@ -30,7 +30,7 @@ nav button {
 }
 
 .main-dash {
-  padding: 10px 20px;
+  padding: 10px 0px;
   width: 960px;
   margin: auto;
   font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
@@ -57,6 +57,7 @@ nav button {
 .getting-started {
   font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
   font-size: 32px;
+  padding: 0px 20px;
 }
 
 .getting-started h2 {
@@ -111,4 +112,84 @@ nav button {
   background-color: #00964b;
   color: white;
   cursor: pointer;
+}
+
+/*Footer styles*/
+
+.footer {
+  background: #b4b9b9;
+  height: 420px;
+  font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+
+}
+
+.footer-content {
+  width: 1200px;
+  margin: auto;
+  padding: 35px 0px;
+}
+
+.footer-content h3 {
+  float: left;
+  padding: 0px 20px;
+}
+
+.footer-content a {
+  color: white;
+  padding: 10px 20px;
+}
+
+/*Popular room display*/
+
+.room-item {
+  text-align: center;
+  float: left;
+  width: 300px;
+  height: 280px;
+  background: white;
+  border-radius: 0%;
+  box-shadow: 0px 2px 2px 0px rgba(50,58,59,0.15);
+  margin: 0px 0px 20px 20px;
+  font-family: "Proxima Light", Arial, Helvetica, sans-serif;
+  position: relative;
+  cursor: pointer;
+}
+
+.room-item img {
+  height: 200px;
+  width: 300px;
+  border-radius: 0%;
+  margin-bottom: 8px;
+}
+
+.room-item:before {
+  transition: 0.2s;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 80px;
+  left: 0;
+  background: rgba(0,0,0,0.2);
+}
+
+.room-item:hover:before {
+  background: none;
+}
+
+.room-item h3 {
+  color: #1da3bf;
+  font-size: 22px;
+  font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
+}
+
+.room-item p {
+  color: #828a8b;
+  font-size: 16px;
+}
+
+.room-item:hover h3 {
+  color: #0d7488;
 }

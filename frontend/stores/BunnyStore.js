@@ -37,15 +37,17 @@ BunnyStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case BunnyConstants.RECEIVE_BUNNIES:
       BunnyStore.updateBunnies(payload.bunnies);
+      BunnyStore.__emitChange();
       break;
     case BunnyConstants.RECEIVE_BUNNY:
       BunnyStore.updateBunnies([payload.bunny]);
+      BunnyStore.__emitChange();
       break;
-    case BunnyConstants.ERROR:
+      case BunnyConstants.ERROR:
       BunnyStore.setErrors(payload.errors);
+      BunnyStore.__emitChange();
       break;
   }
-  BunnyStore.__emitChange();
 };
 
 module.exports = BunnyStore;

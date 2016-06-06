@@ -2,11 +2,25 @@ var React = require('react');
 
 var BookingIndexItem = React.createClass({
   render: function () {
+    var booking = this.props.bookingDetails;
+    var date = new Date(booking.date);
+
     return(
       <div className="booking-item group">
-        <img src={this.props.bookingDetails.bunny.image_url}/>
-        <h1>{this.props.bookingDetails.bunny.name}</h1>
-        <button onClick={this.props.removeBooking} value={this.props.bookingDetails.id}>Cancel Booking</button>
+        <img src={booking.bunny.image_url}/>
+        <ul className="booking-description">
+          <li><h1>{booking.bunny.name}</h1></li>
+          <li>CHORE:  <strong>{booking.chore.name}</strong></li>
+          <li>BOOKING DAY & TIME:  <strong>{date.toLocaleDateString() + ' ' + date.toTimeString().slice(0, 5)}</strong></li>
+        </ul>
+        <ul className='booking-item-buttons'>
+          <li>
+            <button onClick={this.props.removeBooking} value={booking.id}>Cancel Booking</button>
+          </li>
+          <li>
+            <button className='submit' onClick={this.props.markComplete} value={booking.id}>Mark Completed</button>
+          </li>
+        </ul>
       </div>
     );
   }

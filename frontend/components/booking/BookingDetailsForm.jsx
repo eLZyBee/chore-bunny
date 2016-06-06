@@ -12,6 +12,9 @@ var BookingDetailsForm = React.createClass({
     })
   },
   componentDidMount: function () {
+    if (this.props.searchRoom.length >= 1) {
+      this.setState({room_id: this.props.searchRoom});
+    }
     this.roomListener = RoomStore.addListener(this._roomChange);
     this.choreListener = ChoreStore.addListener(this._choreChange);
     ClientActions.fetchAllRooms();
@@ -75,7 +78,7 @@ var BookingDetailsForm = React.createClass({
         <h1>Your Chore Details</h1>
         <div className='booking-section'>
           <label>CHOOSE CHORE LOCATION
-            <select onChange={this.updateRoom}>
+            <select value={(this.state.room_id) ? this.state.room_id : ''} onChange={this.updateRoom}>
               <option/>
               {roomOptions}
             </select>

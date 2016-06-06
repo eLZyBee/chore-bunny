@@ -193,14 +193,37 @@
   margin: 20px 0px;
 }
 
-.booking-item h1 {
-  float: left;
-}
 
-.booking-item button {
+.booking-item-buttons {
+  text-align: right;
   float: right;
+  font-size: 18px;
+  color: #626a6b;
+  padding: 10px;
+  cursor: pointer;
+}
+.booking-item-buttons .submit {
+  margin-top: 33px;
+  border-radius: 4px;
+
 }
 
 .booking-item img {
   padding: 15px;
+}
+
+.booking-description {
+  float: left;
+}
+
+.booking-description h1 {
+  padding: 10px 0;
+}
+
+.booking-description li {
+  font-size: 18px;
+}
+
+.booking-description strong {
+  color: #1da3bf;
 }

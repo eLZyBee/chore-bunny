@@ -21,6 +21,14 @@ var BookingIndex = React.createClass({
       ClientActions.cancelBooking(e.target.value);
     }
   },
+  markComplete: function (e) {
+    e.preventDefault();
+    var booking = BookingStore.find(e.target.value);
+    if (window.confirm('Is this booking really completed?')) {
+      booking.completed = true;
+      ClientActions.updateBooking(booking);
+    }
+  },
   render: function () {
     if (this.bookings) {
       bookings = this.bookings.map(function(booking, i) {
@@ -30,7 +38,8 @@ var BookingIndex = React.createClass({
           return <BookingIndexItem
             key={i}
             bookingDetails={booking}
-            removeBooking={this.removeBooking}/>
+            removeBooking={this.removeBooking}
+            markComplete={this.markComplete}/>
         };
       }.bind(this));
 

@@ -95,7 +95,10 @@ var Booking = React.createClass({
     var stage;
 
     if (this.state.stage === 1) {
-      stage = <BookingDetailsForm nextStage={this.nextStage} updateForm={this.updateForm}/>;
+      stage = <BookingDetailsForm
+        nextStage={this.nextStage}
+        updateForm={this.updateForm}
+        searchRoom={this.props.location.search.slice(1)}/>;
     } else if (this.state.stage === 2) {
       stage = <BunnySearchForm
         nextStage={this.nextStage}

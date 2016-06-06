@@ -18,7 +18,7 @@ bunnies.each do |bunny|
     email: "#{bunny.downcase}@#{bunny.downcase}.com",
     password: "password"
   )
-  this_bunny.image = File.open("/app/assets/images/bunnies/#{this_bunny.name}.png")
+  this_bunny.image = File.open("/app/assets/images/bunnies/#{this_bunny.name.downcase}.png")
   this_bunny.save
 end
 

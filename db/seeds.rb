@@ -13,11 +13,13 @@ User.create(name: 'Guesty McGuestface', email: 'guest@test.com', password: 'pass
 bunnies = %w{Elki Avie Tommy Ryan Jack Michelle Laura Marcus Alan Sasha}
 
 bunnies.each do |bunny|
-  User.create(
+  this_bunny = User.create(
     name: bunny,
     email: "#{bunny.downcase}@#{bunny.downcase}.com",
     password: "password"
   )
+  this_bunny.image = File.open("app/assets/images/bunnies/#{this_bunny.name}.png")
+  this_bunny.save
 end
 
 i = 2
@@ -43,11 +45,18 @@ rooms = {
   "Porch" => "Did the paper arrive today?" # 13
 }
 
+highlighted_rooms = %w{ kitchen bathroom bedroom living\ room garden whole\ house}
+
 rooms.each do |name, description|
-  Room.create(
+  room = Room.create(
     name: name,
     description: description
   )
+  if highlighted_rooms.include?(room.name.downcase)
+    filename = room.name.downcase.gsub(' ', '')
+    room.image = File.open("app/assets/images/rooms/#{filename}.png")
+    room.save
+  end
 end
 
 # Seed chores

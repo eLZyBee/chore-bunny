@@ -18,7 +18,7 @@ bunnies.each do |bunny|
     email: "#{bunny.downcase}@#{bunny.downcase}.com",
     password: "password"
   )
-  this_bunny.image = File.open("app/assets/images/bunnies/#{this_bunny.name}.png")
+  this_bunny.image = File.open("/app/assets/images/bunnies/#{this_bunny.name}.png")
   this_bunny.save
 end
 
@@ -54,7 +54,7 @@ rooms.each do |name, description|
   )
   if highlighted_rooms.include?(room.name.downcase)
     filename = room.name.downcase.gsub(' ', '')
-    room.image = File.open("app/assets/images/rooms/#{filename}.png")
+    room.image = File.open("/app/assets/images/rooms/#{filename}.png")
     room.save
   end
 end

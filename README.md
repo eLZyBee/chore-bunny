@@ -16,8 +16,8 @@ By the end of Week 9, this app will, at a minimum, incorporate the following:
 - [ ] Smooth, bug-free navigation.
 - [ ] Adequate seed data to demonstrate the site's features.
 - [ ] The minimum features necessary for an TaskRabbit style emulation site: chore navigation, worker/bunny navigation and booking, full profile views and review writing/rating.
-  - [ ] Searching for bunnies.
-  - [ ] Making bookings for chores.
+  - [x] Searching for bunnies.
+  - [x] Making bookings for chores.
   - [ ] Reviewing bunnies.
 - [x] Hosting on Heroku.
 - [x] CSS styling that matches the essence of TaskRabbit styling.

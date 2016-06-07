@@ -18,6 +18,7 @@ BunnyStore.find = function (id) {
 };
 
 BunnyStore.updateBunnies = function (bunnies) {
+  _bunnies = {};
   bunnies.forEach(function(bunny) {
     _bunnies[bunny.id] = bunny;
   });

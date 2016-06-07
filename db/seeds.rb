@@ -12,16 +12,16 @@ User.create(name: 'Guesty McGuestface', email: 'guest@test.com', password: 'pass
 # Seed users that will be bunnies and seed them as bunnies too
 bunnies = %w{Elki Avie Tommy Ryan Jack Michelle Laura Marcus Alan Sasha}
 blurbs = [
-  "I am very careful and delicate. If you want a job done right, choose me",
-  "I'm good at hiding and am very helpful",
-  "I like to race to get things done quickly, don't trust me with ceramics",
-  "I love outdoor chores and am very good at watering the plants",
-  "If the price is right, I'll get it done in no time",
-  "I am super organized and tidy but I need help to reach the sink",
-  "I like dusting and I don't like the vacuum",
-  "I am very careful emptying the dishwasher, I can even prepare meals",
-  "Always careful not to overfeed the pets. Knows where all the cleaning stuff is",
-  "I love cooking especially baking, I will even clean up after"
+  "I am very careful and delicate. If you want a job done right, choose me.",
+  "I'm good at hiding and am very helpful.",
+  "I like to race to get things done quickly, don't trust me with ceramics.",
+  "I love outdoor chores and am very good at watering the plants.",
+  "If the price is right, I'll get it done in no time.",
+  "I am super organized and tidy but I need help to reach the sink.",
+  "I like dusting and I don't like the vacuum.",
+  "I am very careful emptying the dishwasher, I can even prepare meals.",
+  "Always careful not to overfeed the pets. Knows where all the cleaning stuff is.",
+  "I love cooking especially baking, I will even clean up after."
 ]
 bunnies.each_with_index do |bunny, i|
   this_bunny = User.create(

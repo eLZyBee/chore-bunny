@@ -26,7 +26,8 @@ var Booking = React.createClass({
         details: null,
         room_id: null,
         chore_id: null
-      }
+      },
+      errors: null
     });
   },
   componentDidMount: function () {
@@ -39,10 +40,45 @@ var Booking = React.createClass({
     // handle errors
   },
   formComplete: function () {
+    this.missingFields = [];
+    if (!this.state.form.details) {
+      this.missingFields.push("You must write some details");
+    }
+    if (!this.state.form.room_id) {
+      this.missingFields.push("You must choose a room");
+    }
+    if (!this.state.form.chore_id) {
+      this.missingFields.push("You must choose a chore");
+    }
+    if (this.missingFields.length > 0) {
+      this.displayMissing();
+    }
     return (this.state.form.details && this.state.form.room_id && this.state.form.chore_id);
   },
   secondFormComplete: function () {
+    this.missingFields = [];
+    if (!this.state.date) {
+      this.missingFields.push("You must select a date");
+    }
+    if (!this.state.time) {
+      this.missingFields.push("You must select a time");
+    }
+    if (this.missingFields.length > 0) {
+      this.displayMissing();
+    }
     return (this.state.date && this.state.time && this.state.bunny_id);
+  },
+  displayMissing: function () {
+    $("#alert").addClass("js-alert");
+    $("input").addClass("input-alert");
+    $("label").addClass("label-alert");
+    this.setState({errors: this.missingFields.join(". ")});
+    setTimeout(function() {
+      $("#alert").removeClass("js-alert");
+      $("input").removeClass("input-alert");
+      $("label").removeClass("label-alert");
+      this.setState({errors: null});
+    }.bind(this), 8000);
   },
   nextStage: function (e) {
     e.preventDefault();
@@ -113,6 +149,7 @@ var Booking = React.createClass({
 
     return (
       <div className="booking">
+        <div id="alert">{this.state.errors}</div>
         <div className="header group">
           <nav>
             <a href='#/home'><img src={textUrl}/></a>

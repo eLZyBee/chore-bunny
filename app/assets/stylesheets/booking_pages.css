@@ -220,7 +220,9 @@
   border-radius: 4px;
 }
 
-.bunny-content {
+.bunny-content  h4{
+  font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
+
 }
 
 .bunny-show {
@@ -258,6 +260,7 @@
   font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
   margin-top: 33px;
   border-radius: 4px;
+  font-size: 16px;
 
 }
 

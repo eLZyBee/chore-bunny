@@ -15,6 +15,7 @@ var BunnyIndexItem = React.createClass({
         </div>
         <div className='bunny-content'>
           <h1>{this.props.bunny.user.name}</h1>
+          <h4>How I can help:</h4>
           <p>{this.props.bunny.user.blurb}</p>
         </div>
       </form>

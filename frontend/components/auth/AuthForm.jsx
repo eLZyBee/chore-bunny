@@ -1,35 +1,34 @@
-var React = require('react'),
-  Link = require('react-router').Link,
-  UserActions = require('../../actions/UserActions'),
-  SessionStore = require('../../stores/SessionStore'),
-  UserStore = require('../../stores/UserStore'),
-  SignupForm = require('./SignupForm'),
-  LoginForm = require('./LoginForm');
+var React = require("react"),
+  UserActions = require("../../actions/UserActions"),
+  SessionStore = require("../../stores/SessionStore"),
+  UserStore = require("../../stores/UserStore"),
+  SignupForm = require("./SignupForm"),
+  LoginForm = require("./LoginForm");
 
 var AuthForm = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
   getInitialState: function() {
-    return({ form: 'choose', errors: null });
+    return({ form: "choose", errors: null });
   },
   _loginChange: function () {
     if (SessionStore.currentUser()){
-      this.context.router.push('home')
+      this.context.router.push("home")
     }
   },
   _handleErrors: function () {
     var self = this;
     this.errors = UserStore.errors();
     if (!(this.errors === undefined)) {
-      $('#alert').addClass('js-alert');
-      $('input').addClass('input-alert');
-      $('label').addClass('label-alert');
-      this.setState({errors: this.errors.join('. ')});
+      $("#alert").addClass("js-alert");
+      $("input").addClass("input-alert");
+      $("label").addClass("label-alert");
+      this.setState({errors: this.errors.join(". ")});
       setTimeout(function() {
-        $('#alert').removeClass('js-alert');
-        $('input').removeClass('input-alert');
-        $('label').removeClass('label-alert');
+        $("#alert").removeClass("js-alert");
+        $("input").removeClass("input-alert");
+        $("label").removeClass("label-alert");
         self.setState({errors: null});
       }, 8000);
     }
@@ -43,21 +42,23 @@ var AuthForm = React.createClass({
     this.errorListener.remove();
   },
   chooseLogin: function () {
-    this.setState({form: 'login'});
+    this.setState({form: "login"});
   },
   chooseSignup: function () {
-    this.setState({form: 'signup'});
+    this.setState({form: "signup"});
   },
   goBack: function () {
-    this.setState({form: 'choose'});
+    this.setState({form: "choose"});
   },
   chooseForm: function () {
     return (
       <div>
-        <div className='auth-google'>
-          <Link to={'http:///auth/google_oauth2'}>Google</Link>
+        <div className="auth-google">
+          <a href="/auth/google_oauth2">Google</a>
         </div>
-        <div className='auth-regular'>
+        <p>or</p>
+        <p>Log in or sign up with email</p>
+        <div className="auth-regular">
           <button onClick={this.chooseLogin}>Log in</button>
           <button onClick={this.chooseSignup}>Sign up</button>
         </div>
@@ -71,18 +72,18 @@ var AuthForm = React.createClass({
   render: function () {
     var form = this.state.form;
 
-    if (form === 'choose') {
+    if (form === "choose") {
       form = this.chooseForm();
-    } else if (form === 'login') {
+    } else if (form === "login") {
       form = <LoginForm goBack={this.goBack}/>;
-    } else if (form === 'signup') {
+    } else if (form === "signup") {
       form = <SignupForm goBack={this.goBack}/>;
     }
 
     return (
-      <div className='background'>
-        <div id='alert'>{this.state.errors}</div>
-        <div className='auth-form'>
+      <div className="background">
+        <div id="alert">{this.state.errors}</div>
+        <div className="auth-form">
           <img src={logoUrl}/>
           {form}
           <p>Don't have or want an account? Log in as <strong onClick={this.guestLogin}>guest</strong></p>

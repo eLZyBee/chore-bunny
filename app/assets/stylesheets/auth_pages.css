@@ -30,6 +30,11 @@ h1 {
   padding: 24px 18px;
   font-family: "Proxima Light", Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  color: #323a3b;
+}
+
+.auth-form p {
+  padding: 10px;
 }
 
 .auth-form strong {
@@ -83,10 +88,19 @@ button {
   color: #1da3bf;
 }
 
-.auth-google button {
-  background: red;
-  border: 1px solid red;
+.auth-google {
+  margin: 10px 0;
+}
+
+.auth-google a {
+  background: #d73d32;
   color: white;
+  border: 1px solid #626a6b;
+  padding: 0.5em 169px 0.5em;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+
 }
 
 .auth-form button:hover {
@@ -95,9 +109,6 @@ button {
   cursor: pointer;
 }
 
-.auth-google button:hover {
-  background: red;
-}
 
 button:focus {
   outline: 0;

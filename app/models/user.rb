@@ -43,14 +43,15 @@ class User < ActiveRecord::Base
 
   def self.find_or_create_from_auth_hash(auth_hash)
     user = User.find_by(google_uid: auth_hash[:uid])
-
     if user.nil?
       user = User.create!(
         google_uid: auth_hash[:uid],
         name: auth_hash[:info][:name],
         email: auth_hash[:info][:email],
-        password_digest: 'not_being_used'
+        password: SecureRandom.urlsafe_base64(8)
       )
+      user.image = auth_hash[:info][:image]
+      user.save!
     end
 
     user

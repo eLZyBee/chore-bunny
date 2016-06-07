@@ -2,10 +2,10 @@ class Api::SessionsController < ApplicationController
 
 	def oauth
 		user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])
-		debugger
+		
 		login(user)
 
-		redirect_to root_url
+		redirect_to "#/home"
 	end
 
 	def create

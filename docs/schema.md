@@ -9,6 +9,7 @@ email           | string    | not null, indexed, unique
 household_id    | integer   | not null, foreign key (references households), indexed
 session_token   | string    | not null, indexed
 password_digest | string    | not null
+google_uid      | integer   |
 
 ## bunnies
 column name | data type | details

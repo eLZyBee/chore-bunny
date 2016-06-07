@@ -167,12 +167,18 @@
 }
 
 .bunny-media {
-  width: 250px;
+  padding: 20px;
+  width: 220px;
   float: left;
+  text-align: center;
+}
+.bunny-media img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .bunny-content {
-  display: block;
 }
 
 .bunny-show {

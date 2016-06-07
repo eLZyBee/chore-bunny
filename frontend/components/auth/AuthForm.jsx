@@ -1,4 +1,5 @@
 var React = require('react'),
+  Link = require('react-router').Link,
   UserActions = require('../../actions/UserActions'),
   SessionStore = require('../../stores/SessionStore'),
   UserStore = require('../../stores/UserStore'),
@@ -12,13 +13,11 @@ var AuthForm = React.createClass({
   getInitialState: function() {
     return({ form: 'choose', errors: null });
   },
-
   _loginChange: function () {
     if (SessionStore.currentUser()){
       this.context.router.push('home')
     }
   },
-
   _handleErrors: function () {
     var self = this;
     this.errors = UserStore.errors();
@@ -35,38 +34,36 @@ var AuthForm = React.createClass({
       }, 8000);
     }
   },
-
   componentDidMount: function () {
     this.sessionListener = SessionStore.addListener(this._loginChange);
     this.errorListener = UserStore.addListener(this._handleErrors);
   },
-
   componentWillUnmount: function () {
     this.sessionListener.remove();
     this.errorListener.remove();
   },
-
   chooseLogin: function () {
     this.setState({form: 'login'});
   },
-
   chooseSignup: function () {
     this.setState({form: 'signup'});
   },
-
   goBack: function () {
     this.setState({form: 'choose'});
   },
-
   chooseForm: function () {
     return (
       <div>
-        <button onClick={this.chooseLogin}>Log in</button>
-        <button onClick={this.chooseSignup}>Sign up</button>
+        <div className='auth-google'>
+          <Link to={'http:///auth/google_oauth2'}>Google</Link>
+        </div>
+        <div className='auth-regular'>
+          <button onClick={this.chooseLogin}>Log in</button>
+          <button onClick={this.chooseSignup}>Sign up</button>
+        </div>
       </div>
     )
   },
-
   guestLogin: function (e) {
     e.preventDefault();
     UserActions.guestLogin();
@@ -82,7 +79,6 @@ var AuthForm = React.createClass({
       form = <SignupForm goBack={this.goBack}/>;
     }
 
-
     return (
       <div className='background'>
         <div id='alert'>{this.state.errors}</div>
@@ -93,9 +89,7 @@ var AuthForm = React.createClass({
         </div>
       </div>
     );
-
   }
-
 });
 
 module.exports = AuthForm;

@@ -24,8 +24,7 @@ var BunnyIndex = React.createClass({
             <BunnyIndexItem
             nextStage={this.props.nextStage}
             updateBunny={this.props.updateBunny}
-            bunnyId={bunny.id}
-            bunnyName={bunny.user.name}/>
+            bunny={bunny}/>
         </div>)
       }.bind(this));
     } else {

@@ -1,5 +1,13 @@
 class Api::SessionsController < ApplicationController
 
+	def oauth
+		user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])
+		debugger
+		login(user)
+
+		redirect_to root_url
+	end
+
 	def create
 		@user = User.find_by_credentials(params[:user][:email], params[:user][:password])
 		if @user

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  validates :name, :email, :password_digest, :session_token, presence: true
+  validates :name, :email, :session_token, presence: true
   validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
@@ -40,6 +40,21 @@ class User < ActiveRecord::Base
     @password = password
 		self.password_digest = BCrypt::Password.create(password)
 	end
+
+  def self.find_or_create_from_auth_hash(auth_hash)
+    user = User.find_by(google_uid: auth_hash[:uid])
+
+    if user.nil?
+      user = User.create!(
+        google_uid: auth_hash[:uid],
+        name: auth_hash[:info][:name],
+        email: auth_hash[:info][:email],
+        password_digest: 'not_being_used'
+      )
+    end
+
+    user
+  end
 
 	def self.find_by_credentials(email, password)
 		user = User.find_by(email: email)

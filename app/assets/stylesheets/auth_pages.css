@@ -16,6 +16,7 @@ h1 {
   font-weight: bold;
 }
 
+
 .auth-form {
   border-radius: 4px;
   max-width: 500px;
@@ -82,10 +83,20 @@ button {
   color: #1da3bf;
 }
 
+.auth-google button {
+  background: red;
+  border: 1px solid red;
+  color: white;
+}
+
 .auth-form button:hover {
   background-color: #1da3bf;
   color: white;
   cursor: pointer;
+}
+
+.auth-google button:hover {
+  background: red;
 }
 
 button:focus {

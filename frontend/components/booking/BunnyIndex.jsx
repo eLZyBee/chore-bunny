@@ -1,6 +1,7 @@
 var React = require('react'),
   BunnyStore = require('../../stores/BunnyStore'),
   BunnyIndexItem = require('./BunnyIndexItem'),
+  QuickAssign = require('./QuickAssign'),
   ClientActions = require('../../actions/ClientActions');
 
 var BunnyIndex = React.createClass({
@@ -20,12 +21,14 @@ var BunnyIndex = React.createClass({
 
     if (this.bunnies) {
       bunnies = this.bunnies.map(function(bunny, i) {
-        return (<div key={i} className='bunny group'>
-            <BunnyIndexItem
-            nextStage={this.props.nextStage}
-            updateBunny={this.props.updateBunny}
-            bunny={bunny}/>
-        </div>)
+        if (bunny.id !== -1) {
+          return (<div key={i} className='bunny group'>
+              <BunnyIndexItem
+              nextStage={this.props.nextStage}
+              updateBunny={this.props.updateBunny}
+              bunny={bunny}/>
+          </div>)
+        }
       }.bind(this));
     } else {
       bunnies = [];
@@ -33,7 +36,10 @@ var BunnyIndex = React.createClass({
 
     return (
       <div>
-        <div className="bunny-show">{bunnies.length} Bunnies Available</div>
+        <QuickAssign
+          updateBunny={this.props.updateBunny}
+          nextStage={this.props.nextStage}/>
+        <div className="bunny-show">{bunnies.length -1} Bunnies Available</div>
         <div className='bunny-list'>
           {bunnies}
         </div>

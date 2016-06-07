@@ -18,6 +18,7 @@ BookingStore.find = function (id) {
 };
 
 BookingStore.updateBookings = function (bookings) {
+  _bookings = {};
   bookings.forEach(function(booking) {
     _bookings[booking.id] = booking;
   });

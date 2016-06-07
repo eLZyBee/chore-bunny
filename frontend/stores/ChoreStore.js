@@ -18,6 +18,7 @@ ChoreStore.find = function (id) {
 };
 
 ChoreStore.updateChores = function (chores) {
+  _chores = {};
   chores.forEach(function(chore) {
     _chores[chore.id] = chore;
   });

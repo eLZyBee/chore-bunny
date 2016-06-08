@@ -10,4 +10,6 @@ class Bunny < ActiveRecord::Base
     foreign_key: :bunny_id
   )
 
+  has_many :reviews, through: :bookings
+
 end

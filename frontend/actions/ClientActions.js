@@ -2,6 +2,7 @@ var BookingApiUtil = require('../util/BookingApiUtil'),
   BunnyApiUtil = require('../util/BunnyApiUtil'),
   ChoreApiUtil = require('../util/ChoreApiUtil'),
   RoomApiUtil = require('../util/RoomApiUtil'),
+  ReviewApiUtil = require('../util/ReviewApiUtil'),
   UserApiUtil = require('../util/UserApiUtil');
 
 module.exports = {
@@ -81,6 +82,11 @@ module.exports = {
   destroyRoom: function (room) {
     RoomApiUtil.destroyRoom(room);
   },
+
+  // Reviews
+  fetchBunnyReviews: function (bunny_id) {
+    ReviewApiUtil.fetchBunnyReviews(bunny_id);
+  }
 
 
 };

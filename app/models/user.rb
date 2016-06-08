@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many :reviews, through: :bookings
+
   has_many(
     :appointments,
     class_name: "Booking",

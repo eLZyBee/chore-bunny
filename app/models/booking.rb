@@ -11,4 +11,6 @@ class Booking < ActiveRecord::Base
   belongs_to :chore
   belongs_to :room
 
+  has_one :review 
+
 end

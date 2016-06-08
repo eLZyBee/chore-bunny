@@ -66,7 +66,6 @@ var Booking = React.createClass({
     if (this.missingFields.length > 0) {
       this.displayMissing();
     }
-    console.log(this.state.time, this.state.date, this.state.bunny_id);
     return (this.state.date && this.state.time);
   },
   displayMissing: function () {
@@ -83,7 +82,6 @@ var Booking = React.createClass({
   },
   nextStage: function (e) {
     e.preventDefault();
-// debugger
     if ((this.state.stage === 1) && this.formComplete()) {
       this.setState({ stage: 2 });
       $('#1').removeClass('stage-active');
@@ -104,7 +102,6 @@ var Booking = React.createClass({
   },
   updateBunny: function (bunny) {
     this.setState({bunny_id: bunny});
-    console.log(bunny, this.state.bunny_id);
   },
   updateDate: function (date) {
     this.setState({date: date});

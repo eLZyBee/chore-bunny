@@ -3,6 +3,9 @@ var React = require('react'),
   ChoreStore = require('../../stores/ChoreStore');
 
 var BunnyChores = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   componentDidMount: function () {
     this.choreListener = ChoreStore.addListener(this._choreChange);
     ClientActions.fetchAllChores();
@@ -14,6 +17,10 @@ var BunnyChores = React.createClass({
     this.chores = ChoreStore.all();
     this.forceUpdate();
   },
+  toBooking: function (e) {
+    e.preventDefault();
+    this.context.router.push('/booking');
+  },
   render: function () {
     var choresWithLinks;
 
@@ -22,10 +29,10 @@ var BunnyChores = React.createClass({
           return (
             <div className="group" key={i}>
               <h2>{chore.name}</h2>
-              <button className="button">Select me for this Chore</button>
+              <button onClick={this.toBooking} className="button">Select me for this Chore</button>
             </div>
           )
-      })
+      }.bind(this))
     } else {
       choresWithLinks = [];
     }

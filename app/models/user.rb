@@ -42,16 +42,36 @@ class User < ActiveRecord::Base
 	end
 
   def self.find_or_create_from_auth_hash(auth_hash)
-    user = User.find_by(google_uid: auth_hash[:uid])
-    if user.nil?
-      user = User.create!(
-        google_uid: auth_hash[:uid],
+
+    if auth_hash[:provider] == "facebook"
+      user = User.find_by(facebook_uid: auth_hash[:uid])
+      if user.nil?
+        user = User.create!(
+        facebook_uid: auth_hash[:uid],
         name: auth_hash[:info][:name],
         email: auth_hash[:info][:email],
         password: SecureRandom.urlsafe_base64(8)
-      )
-      user.image = auth_hash[:info][:image]
-      user.save!
+        )
+
+        avatar_url = URI.parse(auth_hash[:info][:image])
+        avatar_url.scheme = 'https'
+
+        user.image = avatar_url.to_s
+        debugger
+        user.save!
+      end
+    else
+      user = User.find_by(google_uid: auth_hash[:uid])
+      if user.nil?
+        user = User.create!(
+          google_uid: auth_hash[:uid],
+          name: auth_hash[:info][:name],
+          email: auth_hash[:info][:email],
+          password: SecureRandom.urlsafe_base64(8)
+        )
+        user.image = auth_hash[:info][:image]
+        user.save!
+      end
     end
 
     user

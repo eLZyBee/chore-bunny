@@ -12,13 +12,16 @@ var BookingDetailsForm = React.createClass({
     })
   },
   componentDidMount: function () {
-    if (this.props.searchRoom.length >= 1) {
-      this.setState({room_id: this.props.searchRoom});
-    }
     this.roomListener = RoomStore.addListener(this._roomChange);
     this.choreListener = ChoreStore.addListener(this._choreChange);
     ClientActions.fetchAllRooms();
-    ClientActions.fetchAllChores();
+
+    if (this.props.searchRoom.length >= 1) {
+      this.setState({room_id: this.props.searchRoom});
+      ClientActions.fetchRoomChores(this.props.searchRoom);
+    } else {
+      ClientActions.fetchAllChores();
+    }
   },
   componentWillUnmount: function () {
     this.roomListener.remove();
@@ -52,7 +55,11 @@ var BookingDetailsForm = React.createClass({
     this.setState({chore_id: e.target.value});
     this.updateForm();
   },
-
+  handleSubmit: function (e) {
+    e.preventDefault();
+    this.updateForm();
+    this.props.nextStage(e);
+  },
   render: function () {
     var roomOptions;
     var choreOptions;
@@ -74,7 +81,7 @@ var BookingDetailsForm = React.createClass({
     }
 
     return (
-      <form onSubmit={this.props.nextStage} className="booking-details">
+      <form onSubmit={this.handleSubmit} className="booking-details">
         <h1>Your Chore Details</h1>
         <div className='booking-section'>
           <label>CHOOSE CHORE LOCATION

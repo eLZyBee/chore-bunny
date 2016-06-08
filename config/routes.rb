@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   get '/auth/google_oauth2/callback', to: 'api/sessions#oauth'
+  get '/auth/facebook/callback', to: 'api/sessions#oauth'
 
   namespace :api, defaults: { format: :json } do
     resource :user, only: [:create, :show]

@@ -88,19 +88,28 @@ button {
   color: #1da3bf;
 }
 
-.auth-google {
-  margin: 10px 0;
+.oauth {
+  margin: 10px 47px;
 }
 
-.auth-google a {
-  background: #d73d32;
+.oauth a {
   color: white;
   border: 1px solid #626a6b;
-  padding: 0.5em 169px 0.5em;
   border-radius: 4px;
   font-size: 1.25rem;
   font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+  display: block;
+}
 
+.oauth .fb {
+  background: #3b5998;
+  padding: 0.5em 157px 0.5em;
+
+}
+
+.oauth .google {
+  background: #d73d32;
+  padding: 0.5em 169px 0.5em;
 }
 
 .auth-form button:hover {
@@ -145,13 +154,14 @@ form button {
    color: white;
    text-align: center;
    width: 100%;
-   z-index: 10;
+   z-index: -10;
    padding: 13px;
    float: none;
    font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
 }
 
-.js-alert {
+#alert.js-alert {
+  z-index: 10;
   background-color: rgba(245, 209, 91, 0.8);
   border-bottom: 1px solid #aa6e23;
   transition: all 0.3 ease 0s;

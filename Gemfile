@@ -30,6 +30,7 @@ gem 'aws-sdk', '>= 2.0'
 
 # Omni auth requirements
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

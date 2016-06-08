@@ -29,11 +29,11 @@ ChoreBunny will allow users to do the following:
 
 - [x] Create an account (MVP)
 - [x] Log in / Log out, as parent including as a Guest parent (MVP)
-- [ ] Search for workers/bunnies (MVP)
+- [x] Search for workers/bunnies (MVP)
 - [x] Making bookings for chores with individual bunnies (MVP)
 - [ ] Create and read reviews of workers/bunnies (MVP)
 - [ ] Edit and delete reviews of workers/bunnies (not MVP)
-- [ ] Filter bunnies for chores by their ratings (expected feature, not MVP)
+- [ ] Filter bunnies for chores by their ratings (not MVP)
 - [ ] Log in / Log out, as bunny including as a Guest bunny (desirable feature, but not MVP)
 
 ## Design Docs
@@ -94,7 +94,7 @@ user interface.
 
 **Objective:** Existing pages (including signup/login) will look good.
 
-- [ ] create a basic style guide
+- [x] create a basic style guide
 - [x] position elements on the page
 - [x] add basic colors & styles
 
@@ -103,8 +103,8 @@ user interface.
 **Objective:** Add `BookingStageHeader`, `BookingDetailsForm`, `BunnySearch`, `Scheduler`, `QuickAssignment` and `BunnyFilter` components to booking process.
 
 - [x] create `BookingStageHeader` and style `BookingDetailsForm` and `BunnySearchForm` components.
-- [ ] create `QuickAssignment` component.
-  - [ ] Apply CSS styling.
+- [x] create `QuickAssignment` component.
+  - [x] Apply CSS styling.
 
 ### Phase 6: Implement BunnyProfile and Reviews (1 day)
 

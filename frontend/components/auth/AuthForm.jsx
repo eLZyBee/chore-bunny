@@ -53,8 +53,9 @@ var AuthForm = React.createClass({
   chooseForm: function () {
     return (
       <div>
-        <div className="auth-google">
-          <a href="/auth/google_oauth2">Google</a>
+        <div className="oauth">
+          <a className="fb" href="/auth/facebook">Facebook</a><br/>
+          <a className="google" href="/auth/google_oauth2">Google</a>
         </div>
         <p>or</p>
         <p>Log in or sign up with email</p>

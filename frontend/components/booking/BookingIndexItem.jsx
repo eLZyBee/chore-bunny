@@ -7,7 +7,7 @@ var BookingIndexItem = React.createClass({
 
     return(
       <div className="booking-item group">
-        <img src={booking.bunny.image_url}/>
+        <a href={(booking.bunny.id !== -1) ? ("#/bunny?" + booking.bunny.id) : '#/home'}><img src={booking.bunny.image_url}/></a>
         <ul className="booking-description">
           <li><h1>{booking.bunny.name}</h1></li>
           <li>CHORE:  <strong>{booking.chore.name}</strong></li>

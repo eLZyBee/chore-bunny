@@ -7,16 +7,19 @@ var BunnyIndexItem = React.createClass({
     this.props.nextStage(e);
   },
   render: function () {
+    var bunny = this.props.bunny;
+
     return(
       <form onSubmit={this.handleSubmit}>
-        <div className='bunny-media'>
-          <img src={this.props.bunny.user.image_url}/>
-          <input className='submit' type='submit' value='Select & Continue'/>
+        <div className="bunny-media">
+          <img src={bunny.user.image_url}/>
+          <input className="submit" type="submit" value="Select & Continue"/>
+          <a href={"#/bunny?" + bunny.id}>Profile</a>
         </div>
-        <div className='bunny-content'>
-          <h1>{this.props.bunny.user.name}</h1>
+        <div className="bunny-content">
+          <h1>{bunny.user.name}</h1>
           <h4>How I can help:</h4>
-          <p>{this.props.bunny.user.blurb}</p>
+          <p>{bunny.user.blurb}</p>
         </div>
       </form>
     )

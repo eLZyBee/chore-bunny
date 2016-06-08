@@ -1,0 +1,152 @@
+/* Background img dealt with in 'fonts_with_images' scss file */
+
+.profile-header {
+  position: relative;
+  width: 100%;
+  height: 430px;
+  text-align: center;
+}
+
+.profile-header img {
+  position: absolute;
+  left: 42%;
+  margin: 3.5em 2em 2em 2em;
+  border-radius: 50%;
+  width: 162px;
+  border: 4px solid #fff;
+}
+
+.profile-header h2 {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 50px;
+  font-size: 3em;
+  color: #fff;
+}
+
+/* Tabs */
+
+.profile-tab-bar {
+  border-bottom: 1px solid #cfd2d3;
+}
+
+.profile-tabs {
+  margin: auto;
+  width: 1000px;
+  color: #20734c;
+  font-family: "Proxima Light", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  position: relative;
+}
+
+.profile-tabs ul {
+  float: left;
+}
+
+.profile-tabs .tab-container {
+  float: left;
+  line-height: 4em;
+  margin: 0 20px;
+  position: relative;
+}
+
+.profile-tabs .tab-container:not(:first-child):before {
+  content: '';
+  top: 1.5rem;
+  height: 2rem;
+  background: #cfd2d3;
+  width: 1px;
+  position: absolute;
+  left: -20px;
+}
+
+.profile-tabs ul li:hover {
+  cursor: pointer;
+}
+
+.tab-selected {
+  border-bottom: 4px solid;
+}
+
+.profile-content-container {
+  background: #fff;
+}
+
+.profile-content {
+  padding: 2rem 0;
+  margin: auto;
+  width: 1000px;
+}
+
+/* Chores Tab */
+
+.profile-chores button{
+  float: right;
+  border-color: #1da3bf;
+  color: #1da3bf;
+  font-family: "Proxima Thin", Arial, Helvetica, sans-serif;
+
+}
+
+.profile-chores button:hover {
+  background: #1da3bf;
+}
+.profile-chores h2 {
+  margin: 30px 0;
+  font-size: 25px;
+  float: left;
+}
+
+/* Reviews Tab */
+
+.profile-reviews-item {
+  padding: 20px;
+}
+
+.pri-media {
+  float: left;
+  position: relative;
+  width: 120px;
+  padding: 20px;
+}
+
+.pri-media img:first-child {
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+}
+
+.pri-media img:last-child {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.pri-content {
+  margin: 20px 0;
+  float: left;
+  padding: 20px;
+  width: 600px;
+}
+
+.pri-content h3{
+  font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+/* About tab */
+
+.profile-about {
+  padding: 20px;
+}
+
+.profile-about h3 {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.profile-about p {
+  font-family: "Proxima Light", Arial, Helvetica, sans-serif;
+
+}

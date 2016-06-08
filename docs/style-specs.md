@@ -3,10 +3,12 @@
 ## Colors
 - White: #fff
 - Green: #00964b
+- Dark Green: #20734c
 - Black: #323a3b
 - Blue: #1da3bf
 - Darker Blue: #0d7488
 - Dark Gray: #626a6b
+- Darkish Gray: #cfd2d3
 - Gray: #ebecec
 - Light Gray: #f5f6f6
 - Google Red: #d73d32

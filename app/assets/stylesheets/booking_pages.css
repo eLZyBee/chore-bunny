@@ -212,17 +212,34 @@
   padding: 20px;
   width: 220px;
   float: left;
+  color: #1da3bf;
   text-align: center;
 }
+
 .bunny-media img {
   width: 100%;
   margin-bottom: 20px;
   border-radius: 4px;
 }
 
+.bunny-media .submit {
+  margin-bottom: 10px;
+}
+
+.bunny-content {
+  float: left;
+  width: 380px;
+}
+
 .bunny-content  h4{
   font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
+}
 
+.bunny-content h1 {
+  padding: 20px 20px 20px 0;
+}
+.bunny-content p {
+  padding: 10px 20px 10px 0;
 }
 
 .bunny-show {

@@ -57,7 +57,6 @@ class User < ActiveRecord::Base
         avatar_url.scheme = 'https'
 
         user.image = avatar_url.to_s
-        debugger
         user.save!
       end
     else

@@ -7,12 +7,13 @@ var LandingPage = React.createClass({
       dots: false,
       infinite: true,
       autoplay: true,
-      autoplaySpeed: 6000,
+      autoplaySpeed: 4000,
       speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight: true,
-      arrows: false
+      arrows: false,
+      fade: true
     };
     return (
       <div className="landing">
@@ -24,8 +25,11 @@ var LandingPage = React.createClass({
           <img src={carFive}/>
           <img src={carSix}/>
         </Slider>
-        <img className="logo" src={logoWhite}/>
-        <a href="/login">Log in</a>
+        <a href="#/login"><img className="logo" src={logoWhite}/></a>
+        <div className="carousel-text">
+          <h1>We'll find little tasks for your little rabbits</h1>
+        </div>
+        <a href="#/login">{"Log in  /  Sign up"}</a>
       </div>
     );
   }

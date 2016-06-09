@@ -71,3 +71,11 @@
   background-color: #0d7488;
   cursor: pointer;
 }
+
+/* Bunny reviews modal */
+
+.reviews-modal a {
+  font-size: 24px;
+  color: #1da3bf;
+  padding-left: 18px;
+}

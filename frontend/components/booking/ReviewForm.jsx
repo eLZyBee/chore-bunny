@@ -35,7 +35,7 @@ var ReviewForm = React.createClass({
     return (
       <div className="review-form">
         <h3>{this.props.message}</h3>
-        <textarea onChange={this.updateReview} rows="10" cols="50">{this.state.review}</textarea>
+        <textarea onChange={this.updateReview} rows="10" cols="50" value={this.state.review}></textarea>
         <button className="good" onClick={this.changePositive}>{this.state.positive}</button>
         <button className="submit" onClick={this.leaveReview}>Submit Review</button>
       </div>

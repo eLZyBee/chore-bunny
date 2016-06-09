@@ -226,6 +226,10 @@
   margin-bottom: 10px;
 }
 
+.bunny-media a {
+  cursor: pointer;
+}
+
 .bunny-content {
   float: left;
   width: 380px;

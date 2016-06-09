@@ -24,6 +24,10 @@ BookingStore.updateBookings = function (bookings) {
   });
 };
 
+BookingStore.addBooking = function (booking) {
+  _bookings[booking.id] = booking;
+};
+
 BookingStore.deleteBooking = function (id) {
   delete _bookings[id];
 };
@@ -45,7 +49,7 @@ BookingStore.__onDispatch = function (payload) {
       BookingStore.__emitChange();
       break;
     case BookingConstants.RECEIVE_BOOKING:
-      BookingStore.updateBookings([payload.booking]);
+      BookingStore.addBooking(payload.booking);
       BookingStore.__emitChange();
       break;
     case BookingConstants.REMOVE_BOOKING:

@@ -9,6 +9,7 @@ json.parent do
   json.name @booking.parent.name
   json.image_url asset_path(@booking.parent.image.url)
 end
+json.review @booking.review
 json.chore @booking.chore
 json.room @booking.room
 json.details @booking.details

@@ -17,28 +17,35 @@ var BookingIndex = React.createClass({
   },
   removeBooking: function (e) {
     e.preventDefault();
-    if (window.confirm('Are you sure you want to cancel this booking?')) {
-      ClientActions.cancelBooking(e.target.value);
-    }
+    ClientActions.cancelBooking(e.target.value);
   },
   markComplete: function (e) {
     e.preventDefault();
     var booking = BookingStore.find(e.target.value);
-    if (window.confirm('Is this booking really completed?')) {
-      booking.completed = true;
-      ClientActions.updateBooking(booking);
-    }
+    booking.completed = true;
+    ClientActions.updateBooking(booking);
   },
+  refresh: function () {
+    ClientActions.fetchAllBookings();
+  },
+
   render: function () {
     if (this.bookings) {
       bookings = this.bookings.map(function(booking, i) {
-        if (booking.completed) {
+        if (booking.completed && !(booking.review)) {
+          return <BookingIndexItem
+            key={i}
+            bookingDetails={booking}
+            complete={true}
+            refresh={this.refresh}/>
+        } else if (booking.review) {
           return null;
         } else {
           return <BookingIndexItem
             key={i}
             bookingDetails={booking}
             removeBooking={this.removeBooking}
+            refresh={this.refresh}
             markComplete={this.markComplete}/>
         };
       }.bind(this));

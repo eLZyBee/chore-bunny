@@ -11,6 +11,7 @@ if @bookings
       json.name booking.parent.name
       json.image_url asset_path(booking.parent.image.url)
     end
+    json.review booking.review
     json.chore booking.chore
     json.room booking.room
     json.details booking.details
@@ -31,6 +32,7 @@ else
       json.name appointment.parent.name
       json.image_url asset_path(appointment.parent.image.url)
     end
+    json.review appointment.review
     json.chore appointment.chore
     json.room appointment.room
     json.details appointment.details

@@ -86,6 +86,9 @@ module.exports = {
   // Reviews
   fetchBunnyReviews: function (bunny_id) {
     ReviewApiUtil.fetchBunnyReviews(bunny_id);
+  },
+  createReview: function (review) {
+    ReviewApiUtil.createReview(review);
   }
 
 

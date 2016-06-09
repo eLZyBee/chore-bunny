@@ -13,12 +13,12 @@ ChoreBunny is a web application inspired by TaskRabbit that will be built using 
 By the end of Week 9, this app will, at a minimum, incorporate the following:
 
 - [x] New account creation, login, and guest/demo login.
-- [ ] Smooth, bug-free navigation.
-- [ ] Adequate seed data to demonstrate the site's features.
-- [ ] The minimum features necessary for an TaskRabbit style emulation site: chore navigation, worker/bunny navigation and booking, full profile views and review writing/rating.
+- [x] Smooth, bug-free navigation.
+- [x] Adequate seed data to demonstrate the site's features.
+- [x] The minimum features necessary for an TaskRabbit style emulation site: chore navigation, worker/bunny navigation and booking, full profile views and review writing/rating.
   - [x] Searching for bunnies.
   - [x] Making bookings for chores.
-  - [ ] Reviewing bunnies.
+  - [x] Reviewing bunnies.
 - [x] Hosting on Heroku.
 - [x] CSS styling that matches the essence of TaskRabbit styling.
 - [ ] A production README, replacing this README.
@@ -31,8 +31,7 @@ ChoreBunny will allow users to do the following:
 - [x] Log in / Log out, as parent including as a Guest parent (MVP)
 - [x] Search for workers/bunnies (MVP)
 - [x] Making bookings for chores with individual bunnies (MVP)
-- [ ] Create and read reviews of workers/bunnies (MVP)
-- [ ] Edit and delete reviews of workers/bunnies (not MVP)
+- [x] Create and read reviews of workers/bunnies (MVP)
 - [ ] Filter bunnies for chores by their ratings (not MVP)
 - [ ] Log in / Log out, as bunny including as a Guest bunny (desirable feature, but not MVP)
 
@@ -110,27 +109,27 @@ user interface.
 
 **Objective:** Add a profile view for Bunnies and create Review model.
 
-- [ ] create `Review` model and table, reviews belong to completed bookings.
-- [ ] create `BunnyProfile` component
+- [x] create `Review` model and table, reviews belong to completed bookings.
+- [x] create `BunnyProfile` component
 - build out API, Flux loop, and components for:
-  - [ ] creating review of a booking
-  - [ ] viewing reviews in BunnyProfile
-- [ ] Style new elements
+  - [x] creating review of a booking
+  - [x] viewing reviews in BunnyProfile
+- [x] Style new elements
 
 ### Phase 7: Add UserAccountPage and ChoreSearch on Dashboard (1 day)
 
 **objective:** Add UserAccountPage component.
 
-- [ ] create `UserAccountPage` and `ChoreSearch` component.
+- [x] create `UserAccountPage` and `ChoreSearch` component.
 - build out API, Flux loop and components for:
-  - [ ] searching for common chores
-  - [ ] browsing account information
+  - [x] searching for common chores
+  - [x] browsing account information
 
 ### Phase 8: Styling Cleanup and Seeding (0.5 day)
 
 **objective:** Make the site feel more cohesive and awesome.
 
-- [ ] Get feedback on my UI from others
+- [x] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add modals, transitions, and other styling flourishes.
 

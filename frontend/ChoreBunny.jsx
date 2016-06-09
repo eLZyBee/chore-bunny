@@ -8,6 +8,7 @@ var Router = require('react-router').Router,
   hashHistory = require('react-router').hashHistory;
 
 var AuthForm = require('./components/auth/AuthForm'),
+  LandingPage = require('./components/LandingPage'),
   Booking = require('./components/booking/Booking'),
   Dashboard = require('./components/Dashboard'),
   Account = require('./components/Account'),
@@ -31,7 +32,7 @@ var App = React.createClass({
 var router = (
   <Router history={hashHistory}>
     <Route path='/' component={App}>
-      <IndexRoute component={AuthForm}/>
+      <IndexRoute component={LandingPage}/>
       <Route path='login' component={AuthForm}/>
       <Route path='home' component={Dashboard} onEnter={ _ensureLoggedIn }/>
       <Route path='account' component={Account} onEnter={ _ensureLoggedIn }/>

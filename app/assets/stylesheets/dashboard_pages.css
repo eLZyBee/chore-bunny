@@ -76,11 +76,6 @@ nav button {
   margin: 0px 0px 20px 0px;
 }
 
-.getting-started li {
-}
-
-.content {
-}
 
 .badge {
   background: #00964b;
@@ -192,4 +187,27 @@ nav button {
 
 .room-item:hover h3 {
   color: #0d7488;
+}
+
+/* React Search */
+
+.react-search {
+  float: left;
+  width: 700px;
+  font-size: 20px;
+}
+.react-search__input {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  border: transparent;
+}
+
+.react-search__input:focus {
+  border: transparent;
+}
+
+.react-search__menu-item {
+  background: #fff;
+  padding: 5px 18px;
+  box-shadow: 0px 2px 2px 0px rgba(50,58,59,0.15);
 }

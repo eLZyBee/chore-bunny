@@ -5,6 +5,7 @@ var React = require('react'),
   BookingIndex = require('./booking/BookingIndex'),
   RoomsIndex = require('./rooms/RoomsIndex'),
   Footer = require('./Footer'),
+  Header = require('./Header'),
   Search = require('react-search');
 
 var Dashboard = React.createClass ({
@@ -29,21 +30,12 @@ var Dashboard = React.createClass ({
       this.context.router.push('/booking');
     // }
   },
-  signout: function () {
-    ClientActions.logout();
-    this.context.router.push('/login');
-  },
   render: function () {
     var items = (this.chores) ? this.chores : [];
 
     return (
       <div className="dashboard">
-        <div className="header group">
-          <nav>
-            <a href='#/home'><img src={textUrl}/></a>
-            <button onClick={this.signout}>Sign out</button>
-          </nav>
-        </div>
+        <Header/>
         <div className="main-dash">
           <div className="getting-started">
             <img src={SessionStore.currentUser().image_url}/>

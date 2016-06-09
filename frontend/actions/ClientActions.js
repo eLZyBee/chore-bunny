@@ -20,6 +20,9 @@ module.exports = {
   fetchCurrentUser: function () {
     UserApiUtil.fetchCurrentUser();
   },
+  updateUser: function (formData) {
+    UserApiUtil.updateUser(formData);
+  },
 
   // Bookings
   fetchAllBookings: function () {

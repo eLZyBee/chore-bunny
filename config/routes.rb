@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'api/sessions#oauth'
 
   namespace :api, defaults: { format: :json } do
-    resource :user, only: [:create, :show]
+    resource :user, only: [:create, :show, :update]
     resource :session, only: [:create, :destroy, :show]
     resources :rooms, only: [:index, :create, :show, :update, :destroy] do
       resources :chores, only: [:index]

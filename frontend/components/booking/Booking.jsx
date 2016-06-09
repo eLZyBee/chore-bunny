@@ -4,6 +4,7 @@ var React = require('react'),
   BunnySearchForm = require('./BunnySearchForm'),
   BookingConfirmationForm = require('./BookingConfirmationForm'),
   BookingStore = require('../../stores/BookingStore'),
+  Header = require('../Header'),
   ClientActions = require('../../actions/ClientActions');
 
 function parseDate(date, time) {
@@ -150,12 +151,7 @@ var Booking = React.createClass({
     return (
       <div className="booking">
         <div id="alert">{this.state.errors}</div>
-        <div className="header group">
-          <nav>
-            <a href='#/home'><img src={textUrl}/></a>
-            <button onClick={this.signout}>Sign out</button>
-          </nav>
-        </div>
+        <Header/>
         <nav className='stage-header'>
           <ul className='stage-items group'>
             <li id='1'className='stage-active'><strong>1.</strong> Fill Out Chore Details</li>

@@ -1,0 +1,40 @@
+.account-content {
+  margin: auto;
+  width: 1000px;
+  padding: 20px;
+
+}
+
+.account-content input {
+  border: transparent;
+}
+
+.account-content input:focus {
+  border: none;
+}
+.account-content input:last-child {
+  border: 1px solid #1da3bf;
+  color: #1da3bf;
+  width: 140px;
+  margin-left: 20px;
+  text-align: center;
+}
+.account-content input:last-child:hover {
+  background: #1da3bf;
+  color: #fff;
+}
+
+.account-content img {
+  border-radius: 50%;
+  position: absolute;
+  left: 60%;
+  top: -5px;
+}
+
+.account-content-form {
+  position: relative;
+  background: #fff;
+  border: transparent;
+  padding: 20px;
+  margin: 20px 0;
+}

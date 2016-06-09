@@ -49,6 +49,10 @@
 }
 .confirmation {
   text-align: center;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 30%;
   padding: 30px;
   font-size: 34px;
 }

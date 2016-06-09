@@ -51,6 +51,19 @@ module.exports = {
     });
   },
 
+  updateUser: function(formData) {
+    $.ajax({
+      type: 'PATCH',
+      url: 'api/user',
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      data: formData,
+      success: this.receiveCurrentUser,
+      error: this.handleError
+    });
+  },
+
   // Callback Utils for above
   receiveCurrentUser: function(user) {
     AppDispatcher.dispatch({

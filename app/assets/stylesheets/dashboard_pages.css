@@ -22,12 +22,21 @@ nav img {
   padding: 10px 20px;
 }
 
-nav button {
+nav li {
   float: right;
   cursor: pointer;
-  padding: 20px;
-
+  padding: 20px 0;
 }
+
+nav li button {
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+nav li:not(:first-child) button{
+  border-right: 1px solid #cfd2d3;
+}
+
 
 .main-dash {
   padding: 10px 0px;

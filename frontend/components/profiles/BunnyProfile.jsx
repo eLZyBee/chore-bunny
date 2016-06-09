@@ -2,6 +2,7 @@ var React = require('react'),
   BunnyChores = require('./BunnyChores'),
   BunnyReviews = require('./BunnyReviews'),
   BunnyStore = require('../../stores/BunnyStore'),
+  Header = require('../Header'),
   BunnyAbout = require('./BunnyAbout');
 
 var BunnyProfile = React.createClass({
@@ -57,12 +58,7 @@ var BunnyProfile = React.createClass({
 
     return (
       <div className="bunny-profile">
-        <div className="header group">
-          <nav>
-            <a href='#/home'><img src={textUrl}/></a>
-            <button onClick={this.signout}>Sign out</button>
-          </nav>
-        </div>
+        <Header/>
         {header}
         <div className="profile-tab-bar">
           <div className="profile-tabs group">

@@ -50,7 +50,7 @@ nav li:not(:first-child) button{
   height: 90px;
   width: 90px;
   float: left;
-  margin-right: 25px
+  margin-right: 25px;
 }
 
 .welcome {
@@ -105,7 +105,7 @@ nav li:not(:first-child) button{
   text-align: center;
   padding: 0.5em 3em 0.5em;
   font-size: 1.25rem;
-  margin: 10px 0px;
+  margin: 20px 0 10px 0;
   border: 1px solid #00964b;
   font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
   color: #00964b;
@@ -213,6 +213,11 @@ nav li:not(:first-child) button{
 
 .react-search__input:focus {
   border: transparent;
+}
+
+.react-search__menu {
+  position: absolute;
+  width: 700px;
 }
 
 .react-search__menu-item {

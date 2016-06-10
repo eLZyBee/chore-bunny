@@ -14,12 +14,20 @@ var BookingDetailsForm = React.createClass({
   componentDidMount: function () {
     this.roomListener = RoomStore.addListener(this._roomChange);
     this.choreListener = ChoreStore.addListener(this._choreChange);
-    ClientActions.fetchAllRooms();
-
-    if (this.props.searchRoom.length >= 1) {
-      this.setState({room_id: this.props.searchRoom});
-      ClientActions.fetchRoomChores(this.props.searchRoom);
+    var searchString = this.props.searchRoom;
+    
+    if (searchString.length >= 1) {
+      if (searchString.slice(0,4) === 'room') {
+        this.setState({room_id: searchString.slice(5)});
+        ClientActions.fetchRoomChores(searchString.slice(5));
+        ClientActions.fetchAllRooms();
+      } else if (searchString.slice(0,4) === 'chor') {
+        this.setState({chore_id: searchString.slice(5)});
+        ClientActions.fetchSingleRoom(searchString.slice(5));
+        ClientActions.fetchAllChores();
+      }
     } else {
+      ClientActions.fetchAllRooms();
       ClientActions.fetchAllChores();
     }
   },
@@ -85,13 +93,17 @@ var BookingDetailsForm = React.createClass({
         <h1>Your Chore Details</h1>
         <div className='booking-section'>
           <label>CHOOSE CHORE LOCATION
-            <select value={(this.state.room_id) ? this.state.room_id : ''} onChange={this.updateRoom}>
+            <select
+              value={(this.state.room_id) ? this.state.room_id : ''}
+              onChange={this.updateRoom}>
               <option/>
               {roomOptions}
             </select>
           </label>
           <label>CHOOSE CHORE
-            <select onChange={this.updateChore}>
+            <select
+              value={(this.state.chore_id) ? this.state.chore_id : ''}
+              onChange={this.updateChore}>
               <option/>
               {choreOptions}
             </select>

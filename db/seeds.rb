@@ -151,3 +151,25 @@ end
 
 Bunny.create(id: -1, user_id: -1)
 User.create(id: -1, name:'Quick Assign', email:'quick@assign.qa', password:'quickassign')
+
+# Bookings seed
+
+4.times do
+  i = 1
+  while i <= 10
+    Booking.create(
+    parent_id: 1,
+    bunny_id: i,
+    chore_id: 1,
+    room_id: 1,
+    completed: true,
+    details: "Do a good job",
+    date: Date.new
+    )
+    i += 1
+  end
+end
+
+40.times do |i|
+  Review.create(booking_id: i+1, body: Faker::Hipster.sentence)
+end

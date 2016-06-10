@@ -26,7 +26,7 @@ var RoomsIndex = React.createClass({
   },
   bookForRoom: function (e) {
     e.preventDefault();
-    this.context.router.push('/booking?' + e.target.value);
+    this.context.router.push('/booking?room=' + e.target.value);
   },
   render: function () {
     var rooms;

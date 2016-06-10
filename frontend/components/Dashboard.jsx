@@ -23,9 +23,10 @@ var Dashboard = React.createClass ({
     this.chores = ChoreStore.all();
     this.forceUpdate();
   },
-  toBooking: function () {
+  toBooking: function (e) {
+    // debugger
     // if (chore_id) {
-    //   this.context.router.push('/booking?chore=' + chore_id);
+    //   this.context.router.push('/booking?chor=' + chore_id);
     // } else {
       this.context.router.push('/booking');
     // }

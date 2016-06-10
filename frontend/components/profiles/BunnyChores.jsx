@@ -19,7 +19,7 @@ var BunnyChores = React.createClass({
   },
   toBooking: function (e) {
     e.preventDefault();
-    this.context.router.push('/booking');
+    this.context.router.push('/booking?chor=' + e.target.value);
   },
   render: function () {
     var choresWithLinks;
@@ -29,7 +29,7 @@ var BunnyChores = React.createClass({
           return (
             <div className="group" key={i}>
               <h2>{chore.name}</h2>
-              <button onClick={this.toBooking} className="button">Select me for this Chore</button>
+              <button onClick={this.toBooking} value={chore.id} className="button">Select me for this Chore</button>
             </div>
           )
       }.bind(this))

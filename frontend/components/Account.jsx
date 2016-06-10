@@ -4,6 +4,9 @@ var React = require('react'),
   SessionStore = require('../stores/SessionStore');
 
 var Account = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function () {
     return ({imageUrl: "", imageFile: null})
   },
@@ -19,7 +22,8 @@ var Account = React.createClass({
       this.setState({ imageUrl: "", imageFile: null });
     }
   },
-  updatePhoto: function () {
+  updatePhoto: function (e) {
+    e.preventDefault();
     var file = this.state.imageFile;
 
     var formData = new FormData();
@@ -27,6 +31,7 @@ var Account = React.createClass({
     formData.append("user[image]", file);
 
     ClientActions.updateUser(formData);
+    this.context.router.push('/home')
   },
   render: function () {
     return (

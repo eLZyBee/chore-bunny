@@ -32,6 +32,7 @@ var Booking = React.createClass({
     });
   },
   componentDidMount: function () {
+    
     this.errorListener = BookingStore.addListener(this._onErrors);
   },
   componentWillUnmount: function () {

@@ -218,6 +218,7 @@ nav li:not(:first-child) button{
 .react-search__menu {
   position: absolute;
   width: 700px;
+  z-index: 1;
 }
 
 .react-search__menu-item {

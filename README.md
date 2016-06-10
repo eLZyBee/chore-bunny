@@ -2,140 +2,37 @@
 ![logo]
 [logo]: ./app/assets/images/chore_bunny_logo.png
 
-[Heroku Link][heroku] **NB:** Link to production site.
+[Chore Bunny][heroku] **NB:** Link to production site.
 
 [heroku]: https://chorebunny.herokuapp.com
 
-## Minimum Viable Product
+## What is it?
 
-ChoreBunny is a web application inspired by TaskRabbit that will be built using Ruby on Rails and React/Flux. The presentation twist is that instead of searching by *metro* area, you search by *rooms* in your house, and instead of *taskers*, you have your *children/workers/bunnies* to choose from to complete household chores.
+ChoreBunny is a web application inspired by TaskRabbit that is built using Ruby on Rails and React/Flux. The presentation twist is that instead of searching by task *categories*, you search by *rooms* in your house, and instead of *taskers*, you have your *bunnies* (children) to choose from to complete household chores.
 
-By the end of Week 9, this app will, at a minimum, incorporate the following:
+ChoreBunny is a single-page application built with Ruby on Rails, React.js and Flux. It uses a PostgreSQL database.
 
-- [x] New account creation, login, and guest/demo login.
-- [x] Smooth, bug-free navigation.
-- [x] Adequate seed data to demonstrate the site's features.
-- [x] The minimum features necessary for an TaskRabbit style emulation site: chore navigation, worker/bunny navigation and booking, full profile views and review writing/rating.
-  - [x] Searching for bunnies.
-  - [x] Making bookings for chores.
-  - [x] Reviewing bunnies.
-- [x] Hosting on Heroku.
-- [x] CSS styling that matches the essence of TaskRabbit styling.
-- [ ] A production README, replacing this README.
+## Making bookings
 
-## Product Goals and Priorities
+The key functionality of the site is hiring your bunnies for household chores. As such the dashboard/home page offers three ways to start making a new booking. There is the chore `Search` bar where you can search by specific chore. A make a booking button for diving straight into booking. Or you can click on one of the most popular rooms displayed in the `RoomIndex` component, to book a chore in that room.
 
-ChoreBunny will allow users to do the following:
+The `Booking` component renders the appropriate stage of booking, `BookingDetailsForm`, `BunnySearchForm` and finally `BookingConfirmationForm`.  Available bunnies are rendered under the `BunnyIndex` inside the `BunnySearchForm` and `QuickAssignment` too, which allows any bunny to accept the chore.
 
-- [x] Create an account (MVP)
-- [x] Log in / Log out, as parent including as a Guest parent (MVP)
-- [x] Search for workers/bunnies (MVP)
-- [x] Making bookings for chores with individual bunnies (MVP)
-- [x] Create and read reviews of workers/bunnies (MVP)
-- [ ] Filter bunnies for chores by their ratings (not MVP)
-- [ ] Log in / Log out, as bunny including as a Guest bunny (desirable feature, but not MVP)
+## Interacting with bookings
 
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
+Any new bookings turn up on your dashboard/home page under the `BookingIndex` component. This holds a series of `BookingIndexItems` which render differently based on whether the booking is **completed** or not, and whether or not a **review** has been left for the booking.
 
-[views]: ./docs/views.md
-[components]: ./docs/components.md
-[flux-cycles]: ./docs/flux-cycles.md
-[api-endpoints]: ./docs/api-endpoints.md
-[schema]: ./docs/schema.md
+## Bunny profiles
 
-## Implementation Timeline
+Just in case you don't know your children very well and could use a refresher on them, the `BunnyProfile` component contains information about individual bunnies. This is subdivided into the `BunnyChores`, `BunnyReviews` and `BunnyAbout` components.
 
-### Phase 1: Backend setup and User Authentication (0.5 days)
 
-**Objective:** Functioning rails project with Authentication.
+## Further Implementation
 
-- [x] create new project.
-- [x] create `User` model.
-- [x] authentication.
-- [x] user signup/signin pages.
-- [x] blank landing page after signin.
+### Bunny log in
 
-### Phase 2: Rooms/Chores/Bunnies/Bookings Models, API, and basic APIUtil (2 days)
+The immediate functionality I would like to add is the ability for Bunnies to log in and view their upcoming appointments. Expanding on this, they should also be able to set their rate (in BunnyPoints™), view their accrued BunnyPoints™ and a list of rewards (set by the parent) with their associated cost.
 
-**Objective:** Rooms/Chores/Bunnies/Bookings can be created, read, edited and destroyed through the API.
+### Accepting Quick Assignments
 
-- [x] create `Room` & `Chore` & `Bunny` & `Booking` models.
-- [x] seed the database with a small amount of test data.
-- [x] CRUD API for rooms, chores, bunnies and bookings (`RoomController`, `ChoreController`, `BunnyController`, `BookingController`)
-- [x] jBuilder views for rooms, chores, bunnies & bookings.
-- [x] setup Webpack & Flux scaffold.
-- [x] setup `APIUtil` to interact with the API.
-- [x] test out API interaction in the console.
-
-### Phase 3: Flux/React Architecture and Router (1.5 days)
-
-**Objective:** Bookings can be created, read, edited and destroyed with the
-user interface.
-
-- [x] setup the flux loop with skeleton files
-- [x] setup React Router
-- implement each Booking component, building out the flux loop as needed.
-  - [x] `Dashboard`
-  - [x] `BookingDetailsForm`
-  - [x] `BunnySearchForm`
-    - [x] `BunnyIndex`
-      - [x] `BunnyIndexItem`
-  - [x] `BookingConfirmationForm`
-- [x] setup cancellation from bookings within `Dashboard`
-- [x] save Bookings to the DB on confirmation.
-
-### Phase 4: Start Styling (0.5 days)
-
-**Objective:** Existing pages (including signup/login) will look good.
-
-- [x] create a basic style guide
-- [x] position elements on the page
-- [x] add basic colors & styles
-
-### Phase 5: Implement detailed Booking Stages (1 day)
-
-**Objective:** Add `BookingStageHeader`, `BookingDetailsForm`, `BunnySearch`, `Scheduler`, `QuickAssignment` and `BunnyFilter` components to booking process.
-
-- [x] create `BookingStageHeader` and style `BookingDetailsForm` and `BunnySearchForm` components.
-- [x] create `QuickAssignment` component.
-  - [x] Apply CSS styling.
-
-### Phase 6: Implement BunnyProfile and Reviews (1 day)
-
-**Objective:** Add a profile view for Bunnies and create Review model.
-
-- [x] create `Review` model and table, reviews belong to completed bookings.
-- [x] create `BunnyProfile` component
-- build out API, Flux loop, and components for:
-  - [x] creating review of a booking
-  - [x] viewing reviews in BunnyProfile
-- [x] Style new elements
-
-### Phase 7: Add UserAccountPage and ChoreSearch on Dashboard (1 day)
-
-**objective:** Add UserAccountPage component.
-
-- [x] create `UserAccountPage` and `ChoreSearch` component.
-- build out API, Flux loop and components for:
-  - [x] searching for common chores
-  - [x] browsing account information
-
-### Phase 8: Styling Cleanup and Seeding (0.5 day)
-
-**objective:** Make the site feel more cohesive and awesome.
-
-- [x] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
-
-### Bonus Features (TBD)
-- [ ] Sign in as Bunny, manage bookings.
-- [ ] Smart component population (popular chores show in Dashboard)
-- [ ] Add booking cancellations for bunnies.
-- [ ] Allow users to upload profile pictures.
-- [ ] Log in with Google / Facebook.
+Bunnies should be able to see a list of quick assign chores on their dashboard. On a 'first come first serve' basis, they should be able to accept a chore and the parents dashboard should dynamically update to reflect which Bunny has accepted the chore.

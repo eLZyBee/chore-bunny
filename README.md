@@ -8,7 +8,7 @@
 
 ## What is it?
 
-ChoreBunny is a web application inspired by TaskRabbit that is built using Ruby on Rails and React/Flux. The presentation twist is that instead of searching by task *categories*, you search by *rooms* in your house, and instead of *taskers*, you have your *bunnies* (children) to choose from to complete household chores.
+ChoreBunny is a web application inspired by TaskRabbit that is built using Ruby on Rails and React/Flux. The presentation twist is that instead of searching by task **categories**, you search by **rooms** in your house, and instead of **taskers**, you have your **bunnies** (children) to choose from to complete household chores.
 
 ChoreBunny is a single-page application built with Ruby on Rails, React.js and Flux. It uses a PostgreSQL database.
 

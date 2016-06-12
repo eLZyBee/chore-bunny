@@ -1,6 +1,6 @@
 # ChoreBunny
 ![logo]
-[logo]: ./app/assets/images/chore_bunny_logo.png
+[logo]: ../app/assets/images/chore_bunny_logo.png
 
 [Heroku Link][heroku] **NB:** Link to production site.
 
@@ -42,11 +42,11 @@ ChoreBunny will allow users to do the following:
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 
-[views]: ./docs/views.md
-[components]: ./docs/components.md
-[flux-cycles]: ./docs/flux-cycles.md
-[api-endpoints]: ./docs/api-endpoints.md
-[schema]: ./docs/schema.md
+[views]: ./views.md
+[components]: ./components.md
+[flux-cycles]: ./flux-cycles.md
+[api-endpoints]: ./api-endpoints.md
+[schema]: ./schema.md
 
 ## Implementation Timeline
 

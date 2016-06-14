@@ -2,7 +2,7 @@
 ![logo]
 [logo]: ./app/assets/images/chore_bunny_logo.png
 
-[Chore Bunny][heroku] **NB:** Link to production site.
+[Chore Bunny][heroku] 
 
 [heroku]: https://chorebunny.herokuapp.com
 

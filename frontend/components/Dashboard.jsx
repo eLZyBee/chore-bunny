@@ -24,12 +24,7 @@ var Dashboard = React.createClass ({
     this.forceUpdate();
   },
   toBooking: function (e) {
-    // debugger
-    // if (chore_id) {
-    //   this.context.router.push('/booking?chor=' + chore_id);
-    // } else {
       this.context.router.push('/booking');
-    // }
   },
   render: function () {
     var items = (this.chores) ? this.chores : [];

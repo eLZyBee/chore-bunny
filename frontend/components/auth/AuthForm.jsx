@@ -87,7 +87,9 @@ var AuthForm = React.createClass({
         <div className="auth-form">
           <img src={logoUrl}/>
           {form}
-          <p>Don't have or want an account? Log in as <strong onClick={this.guestLogin}>guest</strong></p>
+          <p>Don't have or want an account? Log in as
+            <button onClick={this.guestLogin}>Guest</button>
+          </p>
         </div>
       </div>
     );

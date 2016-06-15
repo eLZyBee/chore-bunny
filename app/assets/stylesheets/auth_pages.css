@@ -37,12 +37,6 @@ h1 {
   padding: 10px;
 }
 
-.auth-form strong {
-  cursor: pointer;
-  font-family: "Proxima Regular", Arial, Helvetica, sans-serif;
-  color: #1da3bf;
-}
-
 form {
   text-align: left;
   margin: 10px 5px;

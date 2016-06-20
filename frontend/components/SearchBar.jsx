@@ -19,6 +19,7 @@ var SearchBar = React.createClass({
   },
   componentWillUnmount: function () {
     this.choreListener.remove();
+    document.removeEventListener("click", this.checkNode);
   },
   _choreChange: function () {
     this.chores = ChoreStore.all();
@@ -38,6 +39,10 @@ var SearchBar = React.createClass({
   activeNode: function (e) {
     this.open = true;
   },
+  toBooking: function (e) {
+    e.preventDefault();
+    this.context.router.push('/booking?chor=' + e.target.value);
+  },
   render: function() {
     var items = items || [];
     var searchString = this.state.searchString.trim().toLowerCase();
@@ -47,8 +52,13 @@ var SearchBar = React.createClass({
         return chore.name.toLowerCase().match(searchString);
       })
       items = chores.map(function(chore, i) {
-        return <li className="search-item" key={i}>{chore.name}</li>;
-      })
+        return (
+          <li className="search-item"
+            onClick={this.toBooking}
+            key={i}
+            value={chore.id}>{chore.name}</li>
+        );
+      }.bind(this))
     }
 
     return (

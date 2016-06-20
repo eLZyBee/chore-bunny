@@ -2,6 +2,9 @@ var React = require('react'),
   ChoreStore = require('../stores/ChoreStore');
 
 var SearchBar = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function () {
     return ({ searchString: "" });
   },
@@ -23,7 +26,6 @@ var SearchBar = React.createClass({
   },
   checkNode: function (e) {
     if (this.node.contains(e.target)) {
-      // open search, or close search
       this.open = true;
     } else {
       this.open = false;

@@ -63,12 +63,3 @@ var Dashboard = React.createClass ({
 });
 
 module.exports = Dashboard;
-
-// <Search
-//   placeholder="Search for a chore"
-//   className="dash-search"
-//   onClick={this.toBooking}
-//   items={items}
-//   keys={['name']}
-//   searchKey={'name'}
-//   />

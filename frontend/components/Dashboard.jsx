@@ -1,27 +1,15 @@
 var React = require('react'),
   ClientActions = require('../actions/ClientActions'),
   SessionStore = require('../stores/SessionStore'),
-  ChoreStore = require('../stores/ChoreStore'),
   BookingIndex = require('./booking/BookingIndex'),
   RoomsIndex = require('./rooms/RoomsIndex'),
   Footer = require('./Footer'),
   Header = require('./Header'),
-  Search = require('react-search');
+  SearchBar = require('./SearchBar');
 
 var Dashboard = React.createClass ({
   contextTypes: {
     router: React.PropTypes.object.isRequired
-  },
-  componentDidMount: function () {
-    this.choreListener = ChoreStore.addListener(this._choreChange);
-    ClientActions.fetchAllChores();
-  },
-  componentWillUnmount: function () {
-    this.choreListener.remove();
-  },
-  _choreChange: function () {
-    this.chores = ChoreStore.all();
-    this.forceUpdate();
   },
   toBooking: function (e) {
       this.context.router.push('/booking');
@@ -36,14 +24,7 @@ var Dashboard = React.createClass ({
           <div className="getting-started">
             <img src={SessionStore.currentUser().image_url}/>
             <h1 className="welcome">{"Welcome to ChoreBunny, " + SessionStore.currentUser().name + "!"}</h1>
-            <Search
-              placeholder="Search for a chore"
-              className="dash-search"
-              onClick={this.toBooking}
-              items={items}
-              keys={['name']}
-              searchKey={'name'}
-              />
+            <SearchBar/>
             <button className="button" onClick={this.toBooking}>Make a Booking</button>
             <BookingIndex/>
             <h2>How to Get Started</h2>
@@ -82,3 +63,12 @@ var Dashboard = React.createClass ({
 });
 
 module.exports = Dashboard;
+
+// <Search
+//   placeholder="Search for a chore"
+//   className="dash-search"
+//   onClick={this.toBooking}
+//   items={items}
+//   keys={['name']}
+//   searchKey={'name'}
+//   />

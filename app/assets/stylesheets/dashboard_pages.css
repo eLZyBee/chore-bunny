@@ -198,6 +198,39 @@ nav li:not(:first-child) button{
   color: #0d7488;
 }
 
+/* My Search */
+input.search-input {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  border: transparent;
+  float: left;
+  width: 700px;
+  font-size: 20px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar .search-results {
+  width: 700px;
+  position: absolute;
+  top: 60px;
+  left: 115px;
+}
+
+.search-results .search-item {
+  background: #fff;
+  padding: 5px 18px;
+  box-shadow: 0px 2px 2px 0px rgba(50, 58, 59, 0.15);
+  font-size: 16px;
+}
+.search-results .search-item:hover {
+  background: #1da3bf;
+  cursor: pointer;
+}
+
+
 /* React Search */
 
 .react-search {

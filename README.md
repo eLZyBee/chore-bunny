@@ -4,7 +4,7 @@
 
 [Chore Bunny][heroku]
 
-[heroku]: https://chorebunny.herokuapp.com
+[heroku]: http://www.chorebunny.site
 
 ## What is it?
 

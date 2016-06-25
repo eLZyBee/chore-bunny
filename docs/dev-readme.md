@@ -4,7 +4,7 @@
 
 [Heroku Link][heroku] **NB:** Link to production site.
 
-[heroku]: https://chorebunny.herokuapp.com
+[heroku]: http://www.chorebunny.site
 
 ## Minimum Viable Product
 

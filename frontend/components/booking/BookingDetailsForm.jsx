@@ -15,7 +15,7 @@ var BookingDetailsForm = React.createClass({
     this.roomListener = RoomStore.addListener(this._roomChange);
     this.choreListener = ChoreStore.addListener(this._choreChange);
     var searchString = this.props.searchRoom;
-    
+
     if (searchString.length >= 1) {
       if (searchString.slice(0,4) === 'room') {
         this.setState({room_id: searchString.slice(5)});
@@ -23,8 +23,8 @@ var BookingDetailsForm = React.createClass({
         ClientActions.fetchAllRooms();
       } else if (searchString.slice(0,4) === 'chor') {
         this.setState({chore_id: searchString.slice(5)});
-        ClientActions.fetchSingleRoom(searchString.slice(5));
         ClientActions.fetchAllChores();
+        ClientActions.fetchAllRooms();
       }
     } else {
       ClientActions.fetchAllRooms();

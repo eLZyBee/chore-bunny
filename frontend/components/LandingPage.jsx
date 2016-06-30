@@ -1,7 +1,11 @@
 var React = require('react'),
-  Slider = require('react-slick');
+  Slider = require('react-slick'),
+  UserActions = require('../actions/UserActions');
 
 var LandingPage = React.createClass({
+  guestLogin: function (e) {
+    UserActions.guestLogin();
+  },
   render: function () {
     var settings = {
       dots: false,
@@ -30,6 +34,7 @@ var LandingPage = React.createClass({
           <h1>We'll find little tasks for your little rabbits</h1>
         </div>
         <a href="#/login">{"Log in  /  Sign up"}</a>
+        <a href="#/login" onClick={this.guestLogin}>{"Explore as Guest"}</a>
       </div>
     );
   }

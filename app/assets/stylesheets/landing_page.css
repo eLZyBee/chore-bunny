@@ -14,9 +14,16 @@
   left: 20px;
 }
 
-.landing a:last-child {
+.landing a:nth-last-child(2) {
   position: absolute;
   top: 60px;
+  right: 40px;
+  color: #fff;
+  font-size: 20px;
+}
+.landing a:last-child {
+  position: absolute;
+  top: 30px;
   right: 40px;
   color: #fff;
   font-size: 20px;

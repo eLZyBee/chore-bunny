@@ -4,12 +4,12 @@ if @bookings
     json.bunny do
       json.id booking.bunny.id
       json.name booking.bunny.user.name
-      json.image_url asset_path(booking.bunny.user.image.url)
+      json.image_url asset_path(booking.bunny.user.image.url(:thumb))
     end
     json.parent do
       json.id booking.parent.id
       json.name booking.parent.name
-      json.image_url asset_path(booking.parent.image.url)
+      json.image_url asset_path(booking.parent.image.url(:thumb))
     end
     json.review booking.review
     json.chore booking.chore
